@@ -91,6 +91,7 @@ namespace BeefCakeGUI
             this.userAddButton.Size = new System.Drawing.Size(58, 25);
             this.userAddButton.TabIndex = 5;
             this.userAddButton.UseVisualStyleBackColor = true;
+            this.userAddButton.Click += new System.EventHandler(this.userAddButton_Click);
             // 
             // addUserLabel
             // 
@@ -155,6 +156,7 @@ namespace BeefCakeGUI
             this.userConfirmButton.Size = new System.Drawing.Size(58, 25);
             this.userConfirmButton.TabIndex = 3;
             this.userConfirmButton.UseVisualStyleBackColor = true;
+            this.userConfirmButton.Click += new System.EventHandler(this.userConfirmButton_Click);
             // 
             // welcomePictureBox
             // 
