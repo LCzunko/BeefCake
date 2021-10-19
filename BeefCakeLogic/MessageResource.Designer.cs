@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace BeefCakeGUI.Properties {
+namespace BeefCakeLogic {
     using System;
     
     
@@ -22,14 +22,14 @@ namespace BeefCakeGUI.Properties {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class Resources {
+    internal class MessageResource {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal Resources() {
+        internal MessageResource() {
         }
         
         /// <summary>
@@ -39,7 +39,7 @@ namespace BeefCakeGUI.Properties {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("BeefCakeGUI.Properties.Resources", typeof(Resources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("BeefCakeLogic.MessageResource", typeof(MessageResource).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -61,42 +61,20 @@ namespace BeefCakeGUI.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        ///   Looks up a localized string similar to Birth date has to be in the past.
         /// </summary>
-        internal static System.Drawing.Bitmap Add_16x {
+        internal static string msgDateOfBirthNotInThePast {
             get {
-                object obj = ResourceManager.GetObject("Add_16x", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                return ResourceManager.GetString("msgDateOfBirthNotInThePast", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        ///   Looks up a localized string similar to This user name is already taken.
         /// </summary>
-        internal static System.Drawing.Bitmap Cartman_Beefcake {
+        internal static string msgUserNameTaken {
             get {
-                object obj = ResourceManager.GetObject("Cartman_Beefcake", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap CartmanAlterEgoObese {
-            get {
-                object obj = ResourceManager.GetObject("CartmanAlterEgoObese", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Checkmark_16x {
-            get {
-                object obj = ResourceManager.GetObject("Checkmark_16x", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                return ResourceManager.GetString("msgUserNameTaken", resourceCulture);
             }
         }
     }

@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System.Collections.Generic;
+using System.Linq;
 using BeefCakeData.DAL.DAOInterface;
 using BeefCakeData.Model;
 
@@ -24,11 +25,11 @@ namespace BeefCakeData.DAL.DAOImpl
             }
         }
 
-        public void ReadAll()
+        public IList<User> ReadAll()
         {
             using (var context = new AppContext())
             {
-                context.Users.ToList();
+                return context.Users.ToList();
             }
         }
 
