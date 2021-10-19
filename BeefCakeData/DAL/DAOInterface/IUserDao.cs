@@ -1,4 +1,5 @@
 ﻿using BeefCakeData.Model;
+using System.Collections.Generic;
 
 namespace BeefCakeData.DAL.DAOInterface
 {
@@ -7,6 +8,6 @@ namespace BeefCakeData.DAL.DAOInterface
         void Add(User user);
         void Update(User user);
         void Delete(User user);
-        void ReadAll();
+        IList<User> ReadAll();
     }
 }
