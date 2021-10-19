@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BeefCakeData.Model
 {
-    class User
+    public class User
     {
     }
 }
