@@ -120,6 +120,13 @@
   <data name="msgDateOfBirthNotInThePast" xml:space="preserve">
     <value>Birth date has to be in the past</value>
   </data>
+  <data name="msgHeightOutsideValidRange" xml:space="preserve">
+    <value>Given height is outside valid height range ( {0}cm .. {1}cm )</value>
+    <comment>Takes two arguments in code</comment>
+  </data>
+  <data name="msgHightIsNotANumber" xml:space="preserve">
+    <value>Given height wasn't recognized as a number</value>
+  </data>
   <data name="msgUserNameTaken" xml:space="preserve">
     <value>This user name is already taken</value>
   </data>

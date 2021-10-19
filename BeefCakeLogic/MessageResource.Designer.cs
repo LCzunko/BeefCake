@@ -70,6 +70,24 @@ namespace BeefCakeLogic {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Given height is outside valid height range ( {0}cm .. {1}cm ).
+        /// </summary>
+        internal static string msgHeightOutsideValidRange {
+            get {
+                return ResourceManager.GetString("msgHeightOutsideValidRange", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Given height wasn&apos;t recognized as a number.
+        /// </summary>
+        internal static string msgHightIsNotANumber {
+            get {
+                return ResourceManager.GetString("msgHightIsNotANumber", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to This user name is already taken.
         /// </summary>
         internal static string msgUserNameTaken {
