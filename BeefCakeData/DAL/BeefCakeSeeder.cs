@@ -56,7 +56,7 @@ namespace BeefCakeData.DAL
             });
             Measurements.Add(new Measurement()
             {
-                Id = 1,
+                Id = 2,
                 UserId = 2,
                 Calories = 3500,
                 Date = DateTime.Now,
@@ -65,7 +65,7 @@ namespace BeefCakeData.DAL
             });
             Measurements.Add(new Measurement()
             {
-                Id = 1,
+                Id = 3,
                 UserId = 3,
                 Calories = 2000,
                 Date = DateTime.Now,
@@ -74,7 +74,7 @@ namespace BeefCakeData.DAL
             });
             Measurements.Add(new Measurement()
             {
-                Id = 1,
+                Id = 4,
                 UserId = 4,
                 Calories = 1900,
                 Date = DateTime.Now,
