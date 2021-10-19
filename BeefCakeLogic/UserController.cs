@@ -1,18 +1,29 @@
-﻿using BeefCakeData.Model;
-using System;
+﻿using BeefCakeData.DAL.DAOInterface;
+using BeefCakeData.Model;
 
 namespace BeefCakeLogic
 {
     public class UserController
     {
-        void EditUser(User user)
+        readonly IUserDao _userDao;
+
+        /// <summary>
+        /// Initializes <see cref="UserController"/>
+        /// </summary>
+        /// <param name="userDao">UserDao to use</param>
+        public UserController(IUserDao userDao)
         {
-            throw new NotImplementedException();
+            _userDao = userDao;
         }
 
-        void AddUser(User user)
+        public void EditUser(User user)
         {
-            throw new NotImplementedException();
+            _userDao.Update(user);
+        }
+
+        public void AddUser(User user)
+        {
+            _userDao.Add(user);
         }
     }
 }
