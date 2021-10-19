@@ -26,13 +26,14 @@ namespace BeefCakeLogic
             return bmi;
         }
 
-        //public void EditMeasurement(Measurement measurement)
-        //{
+        public void EditMeasurement(Measurement measurement)
+        {
+            throw new NotImplementedException();
+        }
 
-        //}
-        //public void AddMeasurement(Measurement measurement)
-        //{
-
-        //}
+        public void AddMeasurement(Measurement measurement)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
