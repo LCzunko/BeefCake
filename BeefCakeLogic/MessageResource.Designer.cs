@@ -95,5 +95,23 @@ namespace BeefCakeLogic {
                 return ResourceManager.GetString("msgUserNameTaken", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Given weight wasn&apos;t recognized as a number.
+        /// </summary>
+        internal static string msgWeightIsNotANumber {
+            get {
+                return ResourceManager.GetString("msgWeightIsNotANumber", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Given weight is outside valid weight range ( {0}kg .. {1}kg ).
+        /// </summary>
+        internal static string msgWeightOutsideValidRange {
+            get {
+                return ResourceManager.GetString("msgWeightOutsideValidRange", resourceCulture);
+            }
+        }
     }
 }

@@ -130,4 +130,11 @@
   <data name="msgUserNameTaken" xml:space="preserve">
     <value>This user name is already taken</value>
   </data>
+  <data name="msgWeightIsNotANumber" xml:space="preserve">
+    <value>Given weight wasn't recognized as a number</value>
+  </data>
+  <data name="msgWeightOutsideValidRange" xml:space="preserve">
+    <value>Given weight is outside valid weight range ( {0}kg .. {1}kg )</value>
+    <comment>Takes two arguments in code</comment>
+  </data>
 </root>

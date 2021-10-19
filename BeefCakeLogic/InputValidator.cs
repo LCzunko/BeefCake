@@ -16,6 +16,12 @@ namespace BeefCakeLogic
         const decimal minValidHeight = 10m;
         const decimal maxValidHeight = 300m;
 
+        const decimal minValidWeight = 1m;
+        const decimal maxValidWeight = 600m;
+
+        const int minValidCalories = 0;
+        const int maxValidCalories = 10000;
+
         /// <summary>
         /// Initializes an <see cref="InputValidator"/>
         /// </summary>
@@ -77,7 +83,20 @@ namespace BeefCakeLogic
         }
         public bool IsWeightValid(string input, out string message)
         {
-            throw new NotImplementedException();
+            if (!decimal.TryParse(input, out decimal parsedInput))
+            {
+                message = MessageResource.msgWeightIsNotANumber;
+                return false;
+            }
+
+            if (!IsDecimalInRange(parsedInput, minValidWeight, maxValidWeight))
+            {
+                message = string.Format(MessageResource.msgWeightOutsideValidRange, minValidWeight, maxValidWeight);
+                return false;
+            }
+
+            message = string.Empty;
+            return true;
         }
         public bool IsCaloriesValid(string input, out string message)
         {
