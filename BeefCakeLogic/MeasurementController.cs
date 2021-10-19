@@ -1,10 +1,18 @@
-﻿using BeefCakeData.Model;
+﻿using BeefCakeData.DAL.DAOInterface;
+using BeefCakeData.Model;
 using System;
 
 namespace BeefCakeLogic
 {
     public class MeasurementController
     {
+        readonly IMeasurementDao _measurementDao;
+
+        public MeasurementController(IMeasurementDao measurementDao)
+        {
+            _measurementDao = measurementDao;
+        }
+
         /// <summary>
         /// Calculates given user's Body Mass Index
         /// </summary>
@@ -28,12 +36,12 @@ namespace BeefCakeLogic
 
         public void EditMeasurement(Measurement measurement)
         {
-            throw new NotImplementedException();
+            _measurementDao.Update(measurement);
         }
 
         public void AddMeasurement(Measurement measurement)
         {
-            throw new NotImplementedException();
+            _measurementDao.Add(measurement);
         }
     }
 }
