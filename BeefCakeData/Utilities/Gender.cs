@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace BeefCakeData.Utilities
 {
-    class Gender
+    public enum Gender
     {
+        F,
+        M
     }
 }
