@@ -16,10 +16,12 @@ namespace BeefCakeGUI
     {
         private User activeUser;
         private Panel activePanel;
+        private IUserDao userDao;
 
         public LoginForm(IUserDao userDao)
         {
             InitializeComponent();
+            this.userDao = userDao;
             LoadLoginPanelData();
         }
         private void userAddButton_Click(object sender, EventArgs e)
@@ -41,7 +43,7 @@ namespace BeefCakeGUI
 
         private void LoadLoginPanelData()
         {
-            //TODO usersComboBox.DataSource = userDao.ReadAll();
+            usersComboBox.DataSource = userDao.ReadAll();
             usersComboBox.DisplayMember = "Name";
         }
 
