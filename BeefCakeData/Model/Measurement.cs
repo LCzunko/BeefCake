@@ -1,12 +1,14 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BeefCakeData.Model
 {
     public class Measurement
     {
+        public int Id { get; set; }
+        public User UserId { get; set; }
+        public decimal Weight { get; set; }
+        public int Calories { get; set; }
+        public DateTime Date { get; set; }
+        public decimal Bmi { get; set; }
     }
 }
