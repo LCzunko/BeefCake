@@ -39,6 +39,12 @@ namespace BeefCakeLogic
         /// <returns>True if given name is not taken</returns>
         public bool IsUserNameAvailable(string input, out string message)
         {
+            if (input.Length == 0)
+            {
+                message = MessageResource.msgUserNameEmpty;
+                return false;
+            }
+
             IList<User> allUsers = _userDao.ReadAll();
             bool isNameAvailable = !allUsers.Any(user => user.Name == input);
             message = isNameAvailable ? string.Empty : MessageResource.msgUserNameTaken;
