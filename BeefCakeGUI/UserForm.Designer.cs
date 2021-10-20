@@ -31,8 +31,8 @@ namespace BeefCakeGUI
         {
             this.userPanel = new System.Windows.Forms.Panel();
             this.userTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
-            this.buttonCancel = new System.Windows.Forms.Button();
-            this.buttonOk = new System.Windows.Forms.Button();
+            this.buttonCancelCreatingUser = new System.Windows.Forms.Button();
+            this.buttonApplyCreatingUser = new System.Windows.Forms.Button();
             this.labelName = new System.Windows.Forms.Label();
             this.labelDateOfBirth = new System.Windows.Forms.Label();
             this.labelGender = new System.Windows.Forms.Label();
@@ -76,8 +76,8 @@ namespace BeefCakeGUI
             this.userTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
             this.userTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
             this.userTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.userTableLayoutPanel.Controls.Add(this.buttonCancel, 0, 9);
-            this.userTableLayoutPanel.Controls.Add(this.buttonOk, 8, 9);
+            this.userTableLayoutPanel.Controls.Add(this.buttonCancelCreatingUser, 0, 9);
+            this.userTableLayoutPanel.Controls.Add(this.buttonApplyCreatingUser, 8, 9);
             this.userTableLayoutPanel.Controls.Add(this.labelName, 5, 1);
             this.userTableLayoutPanel.Controls.Add(this.labelDateOfBirth, 4, 3);
             this.userTableLayoutPanel.Controls.Add(this.labelGender, 5, 5);
@@ -107,31 +107,33 @@ namespace BeefCakeGUI
             this.userTableLayoutPanel.Size = new System.Drawing.Size(846, 520);
             this.userTableLayoutPanel.TabIndex = 0;
             // 
-            // buttonCancel
+            // buttonCancelCreatingUser
             // 
-            this.buttonCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.buttonCancelCreatingUser.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.userTableLayoutPanel.SetColumnSpan(this.buttonCancel, 2);
-            this.buttonCancel.Location = new System.Drawing.Point(3, 471);
-            this.buttonCancel.Name = "buttonCancel";
-            this.buttonCancel.Size = new System.Drawing.Size(162, 46);
-            this.buttonCancel.TabIndex = 0;
-            this.buttonCancel.Text = "Cancel";
-            this.buttonCancel.UseVisualStyleBackColor = true;
+            this.userTableLayoutPanel.SetColumnSpan(this.buttonCancelCreatingUser, 2);
+            this.buttonCancelCreatingUser.Location = new System.Drawing.Point(3, 471);
+            this.buttonCancelCreatingUser.Name = "buttonCancelCreatingUser";
+            this.buttonCancelCreatingUser.Size = new System.Drawing.Size(162, 46);
+            this.buttonCancelCreatingUser.TabIndex = 0;
+            this.buttonCancelCreatingUser.Text = "Cancel";
+            this.buttonCancelCreatingUser.UseVisualStyleBackColor = true;
+            this.buttonCancelCreatingUser.Click += new System.EventHandler(this.buttonCancelCreatingUser_Click);
             // 
-            // buttonOk
+            // buttonApplyCreatingUser
             // 
-            this.buttonOk.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.buttonApplyCreatingUser.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.userTableLayoutPanel.SetColumnSpan(this.buttonOk, 2);
-            this.buttonOk.Location = new System.Drawing.Point(675, 471);
-            this.buttonOk.Name = "buttonOk";
-            this.buttonOk.Size = new System.Drawing.Size(168, 46);
-            this.buttonOk.TabIndex = 1;
-            this.buttonOk.Text = "OK";
-            this.buttonOk.UseVisualStyleBackColor = true;
+            this.userTableLayoutPanel.SetColumnSpan(this.buttonApplyCreatingUser, 2);
+            this.buttonApplyCreatingUser.Location = new System.Drawing.Point(675, 471);
+            this.buttonApplyCreatingUser.Name = "buttonApplyCreatingUser";
+            this.buttonApplyCreatingUser.Size = new System.Drawing.Size(168, 46);
+            this.buttonApplyCreatingUser.TabIndex = 1;
+            this.buttonApplyCreatingUser.Text = "OK";
+            this.buttonApplyCreatingUser.UseVisualStyleBackColor = true;
+            this.buttonApplyCreatingUser.Click += new System.EventHandler(this.buttonApplyCreatingUser_Click);
             // 
             // labelName
             // 
@@ -190,6 +192,7 @@ namespace BeefCakeGUI
             this.dateTimePickerDateOfBirth.Size = new System.Drawing.Size(162, 27);
             this.dateTimePickerDateOfBirth.TabIndex = 7;
             this.dateTimePickerDateOfBirth.Value = new System.DateTime(2021, 10, 20, 0, 0, 0, 0);
+            this.dateTimePickerDateOfBirth.ValueChanged += new System.EventHandler(this.dateTimePickerDateOfBirth_ValueChanged);
             // 
             // textBoxName
             // 
@@ -199,6 +202,7 @@ namespace BeefCakeGUI
             this.textBoxName.Name = "textBoxName";
             this.textBoxName.Size = new System.Drawing.Size(246, 27);
             this.textBoxName.TabIndex = 6;
+            this.textBoxName.TextChanged += new System.EventHandler(this.textBoxName_TextChanged);
             // 
             // textBoxHeight
             // 
@@ -208,6 +212,7 @@ namespace BeefCakeGUI
             this.textBoxHeight.Name = "textBoxHeight";
             this.textBoxHeight.Size = new System.Drawing.Size(246, 27);
             this.textBoxHeight.TabIndex = 10;
+            this.textBoxHeight.TextChanged += new System.EventHandler(this.textBoxHeight_TextChanged);
             // 
             // labelWrongName
             // 
@@ -216,9 +221,8 @@ namespace BeefCakeGUI
             this.labelWrongName.ForeColor = System.Drawing.Color.Red;
             this.labelWrongName.Location = new System.Drawing.Point(507, 104);
             this.labelWrongName.Name = "labelWrongName";
-            this.labelWrongName.Size = new System.Drawing.Size(95, 20);
+            this.labelWrongName.Size = new System.Drawing.Size(0, 20);
             this.labelWrongName.TabIndex = 11;
-            this.labelWrongName.Text = "Wrong name";
             // 
             // labelWrongDate
             // 
@@ -227,9 +231,8 @@ namespace BeefCakeGUI
             this.labelWrongDate.ForeColor = System.Drawing.Color.Red;
             this.labelWrongDate.Location = new System.Drawing.Point(507, 208);
             this.labelWrongDate.Name = "labelWrongDate";
-            this.labelWrongDate.Size = new System.Drawing.Size(88, 20);
+            this.labelWrongDate.Size = new System.Drawing.Size(0, 20);
             this.labelWrongDate.TabIndex = 12;
-            this.labelWrongDate.Text = "Wrong date";
             // 
             // labelWrongHeight
             // 
@@ -238,9 +241,8 @@ namespace BeefCakeGUI
             this.labelWrongHeight.ForeColor = System.Drawing.Color.Red;
             this.labelWrongHeight.Location = new System.Drawing.Point(507, 416);
             this.labelWrongHeight.Name = "labelWrongHeight";
-            this.labelWrongHeight.Size = new System.Drawing.Size(100, 20);
+            this.labelWrongHeight.Size = new System.Drawing.Size(0, 20);
             this.labelWrongHeight.TabIndex = 13;
-            this.labelWrongHeight.Text = "Wrong height";
             // 
             // panelGender
             // 
@@ -313,8 +315,8 @@ namespace BeefCakeGUI
 
         private System.Windows.Forms.Panel userPanel;
         private System.Windows.Forms.TableLayoutPanel userTableLayoutPanel;
-        private System.Windows.Forms.Button buttonCancel;
-        private System.Windows.Forms.Button buttonOk;
+        private System.Windows.Forms.Button buttonCancelCreatingUser;
+        private System.Windows.Forms.Button buttonApplyCreatingUser;
         private System.Windows.Forms.Label labelName;
         private System.Windows.Forms.Label labelDateOfBirth;
         private System.Windows.Forms.Label labelGender;
