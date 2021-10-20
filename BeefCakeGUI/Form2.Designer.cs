@@ -33,17 +33,18 @@ namespace BeefCakeGUI
             this.TableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this.MeasurementPicture = new System.Windows.Forms.PictureBox();
             this.ApplyAddingData = new System.Windows.Forms.Button();
-            this.WeightLabel = new System.Windows.Forms.Label();
-            this.CaloriesLabel = new System.Windows.Forms.Label();
-            this.CurrentWeightTextBox = new System.Windows.Forms.TextBox();
-            this.CurrentCaloriesTextBox = new System.Windows.Forms.TextBox();
-            this.WrongWeightLabel = new System.Windows.Forms.Label();
             this.WrongCaloriesLabel = new System.Windows.Forms.Label();
-            this.SubmitBmiData = new System.Windows.Forms.Button();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.BmiCommentLabel = new System.Windows.Forms.Label();
             this.BmiLabel = new System.Windows.Forms.Label();
             this.CurrentBmiLabel = new System.Windows.Forms.Label();
+            this.CancelBmiButton = new System.Windows.Forms.Button();
+            this.dateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.CurrentCaloriesTextBox = new System.Windows.Forms.TextBox();
+            this.CurrentWeightTextBox = new System.Windows.Forms.TextBox();
+            this.CaloriesLabel = new System.Windows.Forms.Label();
+            this.WeightLabel = new System.Windows.Forms.Label();
+            this.WrongWeightLabel = new System.Windows.Forms.Label();
+            this.MeasurementDateLabel = new System.Windows.Forms.Label();
             this.MeasurementPanel.SuspendLayout();
             this.TableLayoutPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.MeasurementPicture)).BeginInit();
@@ -67,31 +68,32 @@ namespace BeefCakeGUI
             this.TableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 60.68966F));
             this.TableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 102F));
             this.TableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 223F));
-            this.TableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 131F));
+            this.TableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 136F));
             this.TableLayoutPanel.Controls.Add(this.MeasurementPicture, 0, 0);
             this.TableLayoutPanel.Controls.Add(this.ApplyAddingData, 4, 6);
-            this.TableLayoutPanel.Controls.Add(this.WeightLabel, 2, 1);
-            this.TableLayoutPanel.Controls.Add(this.CaloriesLabel, 2, 2);
-            this.TableLayoutPanel.Controls.Add(this.CurrentWeightTextBox, 3, 1);
-            this.TableLayoutPanel.Controls.Add(this.CurrentCaloriesTextBox, 3, 2);
-            this.TableLayoutPanel.Controls.Add(this.WrongWeightLabel, 4, 1);
             this.TableLayoutPanel.Controls.Add(this.WrongCaloriesLabel, 4, 2);
-            this.TableLayoutPanel.Controls.Add(this.SubmitBmiData, 3, 3);
-            this.TableLayoutPanel.Controls.Add(this.dateTimePicker1, 3, 0);
             this.TableLayoutPanel.Controls.Add(this.BmiCommentLabel, 0, 6);
             this.TableLayoutPanel.Controls.Add(this.BmiLabel, 0, 5);
             this.TableLayoutPanel.Controls.Add(this.CurrentBmiLabel, 1, 5);
+            this.TableLayoutPanel.Controls.Add(this.CancelBmiButton, 3, 6);
+            this.TableLayoutPanel.Controls.Add(this.dateTimePicker, 3, 0);
+            this.TableLayoutPanel.Controls.Add(this.CurrentCaloriesTextBox, 3, 3);
+            this.TableLayoutPanel.Controls.Add(this.CurrentWeightTextBox, 3, 2);
+            this.TableLayoutPanel.Controls.Add(this.CaloriesLabel, 2, 3);
+            this.TableLayoutPanel.Controls.Add(this.WeightLabel, 2, 2);
+            this.TableLayoutPanel.Controls.Add(this.WrongWeightLabel, 4, 3);
+            this.TableLayoutPanel.Controls.Add(this.MeasurementDateLabel, 3, 1);
             this.TableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.TableLayoutPanel.Location = new System.Drawing.Point(0, 0);
             this.TableLayoutPanel.Margin = new System.Windows.Forms.Padding(30);
             this.TableLayoutPanel.Name = "TableLayoutPanel";
             this.TableLayoutPanel.Padding = new System.Windows.Forms.Padding(30);
             this.TableLayoutPanel.RowCount = 7;
-            this.TableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 71.21212F));
-            this.TableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 28.78788F));
-            this.TableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
+            this.TableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 34.83871F));
+            this.TableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 65.16129F));
             this.TableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 79F));
-            this.TableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 15F));
+            this.TableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 29F));
+            this.TableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 94F));
             this.TableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 49F));
             this.TableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 31F));
             this.TableLayoutPanel.Size = new System.Drawing.Size(800, 450);
@@ -104,8 +106,8 @@ namespace BeefCakeGUI
             this.MeasurementPicture.Image = global::BeefCakeGUI.Properties.Resources.Mysterion;
             this.MeasurementPicture.Location = new System.Drawing.Point(33, 33);
             this.MeasurementPicture.Name = "MeasurementPicture";
-            this.TableLayoutPanel.SetRowSpan(this.MeasurementPicture, 4);
-            this.MeasurementPicture.Size = new System.Drawing.Size(277, 288);
+            this.TableLayoutPanel.SetRowSpan(this.MeasurementPicture, 5);
+            this.MeasurementPicture.Size = new System.Drawing.Size(272, 303);
             this.MeasurementPicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.MeasurementPicture.TabIndex = 3;
             this.MeasurementPicture.TabStop = false;
@@ -113,94 +115,25 @@ namespace BeefCakeGUI
             // ApplyAddingData
             // 
             this.ApplyAddingData.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ApplyAddingData.Location = new System.Drawing.Point(641, 391);
+            this.ApplyAddingData.Location = new System.Drawing.Point(636, 391);
             this.ApplyAddingData.Name = "ApplyAddingData";
-            this.ApplyAddingData.Size = new System.Drawing.Size(126, 26);
+            this.ApplyAddingData.Size = new System.Drawing.Size(131, 26);
             this.ApplyAddingData.TabIndex = 8;
             this.ApplyAddingData.Text = "OK";
             this.ApplyAddingData.UseVisualStyleBackColor = true;
             this.ApplyAddingData.Click += new System.EventHandler(this.ApplyAddingData_Click);
-            // 
-            // WeightLabel
-            // 
-            this.WeightLabel.AutoSize = true;
-            this.WeightLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.WeightLabel.Location = new System.Drawing.Point(316, 141);
-            this.WeightLabel.Name = "WeightLabel";
-            this.WeightLabel.Size = new System.Drawing.Size(96, 44);
-            this.WeightLabel.TabIndex = 9;
-            this.WeightLabel.Text = "Weight:";
-            this.WeightLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // CaloriesLabel
-            // 
-            this.CaloriesLabel.AutoSize = true;
-            this.CaloriesLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.CaloriesLabel.Location = new System.Drawing.Point(316, 185);
-            this.CaloriesLabel.Name = "CaloriesLabel";
-            this.CaloriesLabel.Size = new System.Drawing.Size(96, 60);
-            this.CaloriesLabel.TabIndex = 10;
-            this.CaloriesLabel.Text = "Calories:";
-            this.CaloriesLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // CurrentWeightTextBox
-            // 
-            this.CurrentWeightTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.CurrentWeightTextBox.Location = new System.Drawing.Point(418, 151);
-            this.CurrentWeightTextBox.Name = "CurrentWeightTextBox";
-            this.CurrentWeightTextBox.Size = new System.Drawing.Size(217, 23);
-            this.CurrentWeightTextBox.TabIndex = 11;
-            // 
-            // CurrentCaloriesTextBox
-            // 
-            this.CurrentCaloriesTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.CurrentCaloriesTextBox.Location = new System.Drawing.Point(418, 203);
-            this.CurrentCaloriesTextBox.Name = "CurrentCaloriesTextBox";
-            this.CurrentCaloriesTextBox.Size = new System.Drawing.Size(217, 23);
-            this.CurrentCaloriesTextBox.TabIndex = 12;
-            // 
-            // WrongWeightLabel
-            // 
-            this.WrongWeightLabel.AutoSize = true;
-            this.WrongWeightLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.WrongWeightLabel.ForeColor = System.Drawing.Color.Red;
-            this.WrongWeightLabel.Location = new System.Drawing.Point(641, 141);
-            this.WrongWeightLabel.Name = "WrongWeightLabel";
-            this.WrongWeightLabel.Size = new System.Drawing.Size(126, 44);
-            this.WrongWeightLabel.TabIndex = 14;
-            this.WrongWeightLabel.Text = "Wrong data input";
-            this.WrongWeightLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // WrongCaloriesLabel
             // 
             this.WrongCaloriesLabel.AutoSize = true;
             this.WrongCaloriesLabel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.WrongCaloriesLabel.ForeColor = System.Drawing.Color.Red;
-            this.WrongCaloriesLabel.Location = new System.Drawing.Point(641, 185);
+            this.WrongCaloriesLabel.Location = new System.Drawing.Point(636, 137);
             this.WrongCaloriesLabel.Name = "WrongCaloriesLabel";
-            this.WrongCaloriesLabel.Size = new System.Drawing.Size(126, 60);
+            this.WrongCaloriesLabel.Size = new System.Drawing.Size(131, 79);
             this.WrongCaloriesLabel.TabIndex = 15;
             this.WrongCaloriesLabel.Text = "Wrong data input";
             this.WrongCaloriesLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // SubmitBmiData
-            // 
-            this.SubmitBmiData.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.SubmitBmiData.Location = new System.Drawing.Point(560, 248);
-            this.SubmitBmiData.Name = "SubmitBmiData";
-            this.SubmitBmiData.Size = new System.Drawing.Size(75, 23);
-            this.SubmitBmiData.TabIndex = 16;
-            this.SubmitBmiData.Text = "Submit";
-            this.SubmitBmiData.UseVisualStyleBackColor = true;
-            this.SubmitBmiData.Click += new System.EventHandler(this.SubmitBmiData_Click);
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.dateTimePicker1.Location = new System.Drawing.Point(418, 33);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(217, 23);
-            this.dateTimePicker1.TabIndex = 17;
             // 
             // BmiCommentLabel
             // 
@@ -220,7 +153,7 @@ namespace BeefCakeGUI
             this.BmiLabel.AutoSize = true;
             this.BmiLabel.Dock = System.Windows.Forms.DockStyle.Right;
             this.BmiLabel.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.BmiLabel.Location = new System.Drawing.Point(75, 339);
+            this.BmiLabel.Location = new System.Drawing.Point(73, 339);
             this.BmiLabel.Margin = new System.Windows.Forms.Padding(10, 0, 3, 0);
             this.BmiLabel.Name = "BmiLabel";
             this.BmiLabel.Size = new System.Drawing.Size(63, 49);
@@ -233,12 +166,97 @@ namespace BeefCakeGUI
             this.CurrentBmiLabel.AutoSize = true;
             this.CurrentBmiLabel.Dock = System.Windows.Forms.DockStyle.Left;
             this.CurrentBmiLabel.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.CurrentBmiLabel.Location = new System.Drawing.Point(144, 339);
+            this.CurrentBmiLabel.Location = new System.Drawing.Point(142, 339);
             this.CurrentBmiLabel.Name = "CurrentBmiLabel";
             this.CurrentBmiLabel.Size = new System.Drawing.Size(32, 49);
             this.CurrentBmiLabel.TabIndex = 13;
             this.CurrentBmiLabel.Text = "22.5";
             this.CurrentBmiLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // CancelBmiButton
+            // 
+            this.CancelBmiButton.Dock = System.Windows.Forms.DockStyle.Right;
+            this.CancelBmiButton.Location = new System.Drawing.Point(496, 391);
+            this.CancelBmiButton.Name = "CancelBmiButton";
+            this.CancelBmiButton.Size = new System.Drawing.Size(134, 26);
+            this.CancelBmiButton.TabIndex = 16;
+            this.CancelBmiButton.Text = "Cancel";
+            this.CancelBmiButton.UseVisualStyleBackColor = true;
+            this.CancelBmiButton.Click += new System.EventHandler(this.SubmitBmiData_Click);
+            // 
+            // dateTimePicker
+            // 
+            this.dateTimePicker.Location = new System.Drawing.Point(413, 33);
+            this.dateTimePicker.MaxDate = new System.DateTime(2021, 10, 20, 0, 0, 0, 0);
+            this.dateTimePicker.MinDate = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
+            this.dateTimePicker.Name = "dateTimePicker";
+            this.dateTimePicker.Size = new System.Drawing.Size(217, 23);
+            this.dateTimePicker.TabIndex = 17;
+            this.dateTimePicker.Value = new System.DateTime(2021, 10, 20, 0, 0, 0, 0);
+            this.dateTimePicker.ValueChanged += new System.EventHandler(this.dateTimePicker_ValueChanged);
+            // 
+            // CurrentCaloriesTextBox
+            // 
+            this.CurrentCaloriesTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.CurrentCaloriesTextBox.Location = new System.Drawing.Point(413, 219);
+            this.CurrentCaloriesTextBox.Name = "CurrentCaloriesTextBox";
+            this.CurrentCaloriesTextBox.Size = new System.Drawing.Size(217, 23);
+            this.CurrentCaloriesTextBox.TabIndex = 12;
+            this.CurrentCaloriesTextBox.TextChanged += new System.EventHandler(this.CurrentCaloriesTextBox_TextChanged);
+            // 
+            // CurrentWeightTextBox
+            // 
+            this.CurrentWeightTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.CurrentWeightTextBox.Location = new System.Drawing.Point(413, 165);
+            this.CurrentWeightTextBox.Name = "CurrentWeightTextBox";
+            this.CurrentWeightTextBox.Size = new System.Drawing.Size(217, 23);
+            this.CurrentWeightTextBox.TabIndex = 11;
+            this.CurrentWeightTextBox.TextChanged += new System.EventHandler(this.CurrentWeightTextBox_TextChanged);
+            // 
+            // CaloriesLabel
+            // 
+            this.CaloriesLabel.AutoSize = true;
+            this.CaloriesLabel.Dock = System.Windows.Forms.DockStyle.Right;
+            this.CaloriesLabel.Location = new System.Drawing.Point(355, 216);
+            this.CaloriesLabel.Name = "CaloriesLabel";
+            this.CaloriesLabel.Size = new System.Drawing.Size(52, 29);
+            this.CaloriesLabel.TabIndex = 10;
+            this.CaloriesLabel.Text = "Calories:";
+            this.CaloriesLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // WeightLabel
+            // 
+            this.WeightLabel.AutoSize = true;
+            this.WeightLabel.Dock = System.Windows.Forms.DockStyle.Right;
+            this.WeightLabel.Location = new System.Drawing.Point(359, 137);
+            this.WeightLabel.Name = "WeightLabel";
+            this.WeightLabel.Size = new System.Drawing.Size(48, 79);
+            this.WeightLabel.TabIndex = 9;
+            this.WeightLabel.Text = "Weight:";
+            this.WeightLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // WrongWeightLabel
+            // 
+            this.WrongWeightLabel.AutoSize = true;
+            this.WrongWeightLabel.Dock = System.Windows.Forms.DockStyle.Left;
+            this.WrongWeightLabel.ForeColor = System.Drawing.Color.Red;
+            this.WrongWeightLabel.Location = new System.Drawing.Point(636, 216);
+            this.WrongWeightLabel.Name = "WrongWeightLabel";
+            this.WrongWeightLabel.Size = new System.Drawing.Size(100, 29);
+            this.WrongWeightLabel.TabIndex = 14;
+            this.WrongWeightLabel.Text = "Wrong data input";
+            this.WrongWeightLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // MeasurementDateLabel
+            // 
+            this.MeasurementDateLabel.AutoSize = true;
+            this.MeasurementDateLabel.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.MeasurementDateLabel.Location = new System.Drawing.Point(413, 122);
+            this.MeasurementDateLabel.Name = "MeasurementDateLabel";
+            this.MeasurementDateLabel.Size = new System.Drawing.Size(217, 15);
+            this.MeasurementDateLabel.TabIndex = 18;
+            this.MeasurementDateLabel.Text = "Measurements for [date]:";
+            this.MeasurementDateLabel.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             // 
             // Form2
             // 
@@ -262,17 +280,18 @@ namespace BeefCakeGUI
         private System.Windows.Forms.Panel MeasurementPanel;
         private System.Windows.Forms.TableLayoutPanel TableLayoutPanel;
         private System.Windows.Forms.PictureBox MeasurementPicture;
-        private System.Windows.Forms.Label BmiLabel;
-        private System.Windows.Forms.Label BmiCommentLabel;
         private System.Windows.Forms.Button ApplyAddingData;
-        private System.Windows.Forms.Label WeightLabel;
-        private System.Windows.Forms.Label CaloriesLabel;
-        private System.Windows.Forms.TextBox CurrentWeightTextBox;
-        private System.Windows.Forms.TextBox CurrentCaloriesTextBox;
-        private System.Windows.Forms.Label CurrentBmiLabel;
-        private System.Windows.Forms.Label WrongWeightLabel;
         private System.Windows.Forms.Label WrongCaloriesLabel;
-        private System.Windows.Forms.Button SubmitBmiData;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.Label BmiCommentLabel;
+        private System.Windows.Forms.Label BmiLabel;
+        private System.Windows.Forms.Label CurrentBmiLabel;
+        private System.Windows.Forms.Button CancelBmiButton;
+        private System.Windows.Forms.DateTimePicker dateTimePicker;
+        private System.Windows.Forms.TextBox CurrentCaloriesTextBox;
+        private System.Windows.Forms.TextBox CurrentWeightTextBox;
+        private System.Windows.Forms.Label CaloriesLabel;
+        private System.Windows.Forms.Label WeightLabel;
+        private System.Windows.Forms.Label WrongWeightLabel;
+        private System.Windows.Forms.Label MeasurementDateLabel;
     }
 }
