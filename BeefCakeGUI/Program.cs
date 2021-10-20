@@ -18,7 +18,7 @@ namespace BeefCakeGUI
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form2(new MeasurementDao()));
+            Application.Run(new Form2(new MeasurementDao(), new UserDao()));
         }
     }
 }

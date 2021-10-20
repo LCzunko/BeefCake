@@ -1,4 +1,5 @@
 ﻿using BeefCakeData.DAL;
+using BeefCakeData.DAL.DAOImpl;
 using BeefCakeData.DAL.DAOInterface;
 using BeefCakeData.Model;
 using BeefCakeLogic;
@@ -18,12 +19,14 @@ namespace BeefCakeGUI
         private DateTime currentDate;
         private Measurement currentMeasurement;
 
-        public Form2(IMeasurementDao measurementDao)
+        public Form2(IMeasurementDao measurementDao, IUserDao userDaoo)
         {
             InitializeComponent();
             this.measurementDao = measurementDao;
+            this.userDao = userDaoo;
             measurementController = new(measurementDao);
             LoadMeasurementPanelData();
+            activeUser = userDao.ReadAll().FirstOrDefault(x => x.Name == "Sylwia");
         }
 
         private void LoadMeasurementPanelData()
@@ -60,7 +63,7 @@ namespace BeefCakeGUI
             {
                 var calories = CurrentCaloriesTextBox.Text;
                 var weight = CurrentWeightTextBox.Text;
-                var measurement = MeasurementBuilder.BuildMeasurement(currentDate, weight, calories, 4);
+                var measurement = MeasurementBuilder.BuildMeasurement(currentDate, weight, calories, activeUser.Id);
                 measurementController.AddMeasurement(measurement);
             }
             else
@@ -87,13 +90,45 @@ namespace BeefCakeGUI
             var measurement = GetCurrentMeasurement();
             if (measurement == null)
             {
-                CurrentBmiLabel.Text = "Unknown";
-                currentMeasurement = null;
+                DisplayNoMeasurement();
             }
             else
             {
-                CurrentBmiLabel.Text = MeasurementController.CalculateBmi(activeUser, measurement).ToString();
-                currentMeasurement = measurement;
+                DisplayCurrentMeasurement(measurement);
+            }
+        }
+
+        private void DisplayCurrentMeasurement(Measurement measurement)
+        {
+            CurrentBmiLabel.Text = MeasurementController.CalculateBmi(activeUser, measurement).ToString();
+            currentMeasurement = measurement;
+            CurrentCaloriesTextBox.Text = measurement.Calories.ToString();
+            CurrentWeightTextBox.Text = measurement.Weight.ToString();
+            ChangePictureAccordingToBmi(measurement.Bmi);
+        }
+
+        private void DisplayNoMeasurement()
+        {
+            CurrentBmiLabel.Text = "Unknown";
+            currentMeasurement = null;
+            CurrentCaloriesTextBox.Text = null;
+            CurrentWeightTextBox.Text = null;
+            MeasurementPicture.Image = Properties.Resources.Mysterion;
+        }
+
+        private void ChangePictureAccordingToBmi(decimal bmi)
+        {
+            if (bmi <= 22)
+            {
+                MeasurementPicture.Image = Properties.Resources.Workforce_weight_gain_ad_actor;
+            }
+            else if (bmi <= 25 && bmi > 22)
+            {
+                MeasurementPicture.Image = Properties.Resources.Cartman_Beefcake;
+            }
+            else
+            {
+                MeasurementPicture.Image = Properties.Resources.CartmanAlterEgoObese;
             }
         }
 
