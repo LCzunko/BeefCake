@@ -48,15 +48,16 @@ namespace BeefCakeGUI
             ((System.ComponentModel.ISupportInitialize)(this.MeasurementPicture)).BeginInit();
             this.SuspendLayout();
             // 
-            // panel1
+            // MeasurementPanel
             // 
             this.MeasurementPanel.AutoSize = true;
             this.MeasurementPanel.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.MeasurementPanel.Controls.Add(this.TableLayoutPanel);
             this.MeasurementPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.MeasurementPanel.Location = new System.Drawing.Point(0, 0);
-            this.MeasurementPanel.Name = "panel1";
-            this.MeasurementPanel.Size = new System.Drawing.Size(800, 450);
+            this.MeasurementPanel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.MeasurementPanel.Name = "MeasurementPanel";
+            this.MeasurementPanel.Size = new System.Drawing.Size(914, 600);
             this.MeasurementPanel.TabIndex = 0;
             // 
             // TableLayoutPanel
@@ -64,9 +65,9 @@ namespace BeefCakeGUI
             this.TableLayoutPanel.ColumnCount = 5;
             this.TableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 39.31034F));
             this.TableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 60.68966F));
-            this.TableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 102F));
-            this.TableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 223F));
-            this.TableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 125F));
+            this.TableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 117F));
+            this.TableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 255F));
+            this.TableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 144F));
             this.TableLayoutPanel.Controls.Add(this.MeasurementPicture, 0, 0);
             this.TableLayoutPanel.Controls.Add(this.BmiLabel, 0, 4);
             this.TableLayoutPanel.Controls.Add(this.BmiCommentLabel, 0, 5);
@@ -81,18 +82,18 @@ namespace BeefCakeGUI
             this.TableLayoutPanel.Controls.Add(this.WrongCaloriesLabel, 4, 2);
             this.TableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.TableLayoutPanel.Location = new System.Drawing.Point(0, 0);
-            this.TableLayoutPanel.Margin = new System.Windows.Forms.Padding(30);
+            this.TableLayoutPanel.Margin = new System.Windows.Forms.Padding(34, 40, 34, 40);
             this.TableLayoutPanel.Name = "TableLayoutPanel";
-            this.TableLayoutPanel.Padding = new System.Windows.Forms.Padding(30);
+            this.TableLayoutPanel.Padding = new System.Windows.Forms.Padding(34, 40, 34, 40);
             this.TableLayoutPanel.RowCount = 7;
             this.TableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 71.21212F));
             this.TableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 28.78788F));
-            this.TableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
-            this.TableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 81F));
-            this.TableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 31F));
-            this.TableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.TableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 32F));
-            this.TableLayoutPanel.Size = new System.Drawing.Size(800, 450);
+            this.TableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 80F));
+            this.TableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 108F));
+            this.TableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 41F));
+            this.TableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
+            this.TableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 43F));
+            this.TableLayoutPanel.Size = new System.Drawing.Size(914, 600);
             this.TableLayoutPanel.TabIndex = 0;
             this.TableLayoutPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
             // 
@@ -101,10 +102,11 @@ namespace BeefCakeGUI
             this.TableLayoutPanel.SetColumnSpan(this.MeasurementPicture, 2);
             this.MeasurementPicture.Dock = System.Windows.Forms.DockStyle.Fill;
             this.MeasurementPicture.Image = global::BeefCakeGUI.Properties.Resources.CartmanAlterEgoObese;
-            this.MeasurementPicture.Location = new System.Drawing.Point(33, 33);
+            this.MeasurementPicture.Location = new System.Drawing.Point(37, 44);
+            this.MeasurementPicture.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.MeasurementPicture.Name = "MeasurementPicture";
             this.TableLayoutPanel.SetRowSpan(this.MeasurementPicture, 4);
-            this.MeasurementPicture.Size = new System.Drawing.Size(284, 290);
+            this.MeasurementPicture.Size = new System.Drawing.Size(323, 387);
             this.MeasurementPicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.MeasurementPicture.TabIndex = 3;
             this.MeasurementPicture.TabStop = false;
@@ -113,10 +115,10 @@ namespace BeefCakeGUI
             // 
             this.BmiLabel.AutoSize = true;
             this.BmiLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.BmiLabel.Location = new System.Drawing.Point(80, 326);
-            this.BmiLabel.Margin = new System.Windows.Forms.Padding(50, 0, 3, 0);
+            this.BmiLabel.Location = new System.Drawing.Point(91, 435);
+            this.BmiLabel.Margin = new System.Windows.Forms.Padding(57, 0, 3, 0);
             this.BmiLabel.Name = "BmiLabel";
-            this.BmiLabel.Size = new System.Drawing.Size(61, 31);
+            this.BmiLabel.Size = new System.Drawing.Size(69, 41);
             this.BmiLabel.TabIndex = 4;
             this.BmiLabel.Text = "BMI:";
             this.BmiLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -126,10 +128,10 @@ namespace BeefCakeGUI
             this.BmiCommentLabel.AutoSize = true;
             this.TableLayoutPanel.SetColumnSpan(this.BmiCommentLabel, 2);
             this.BmiCommentLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.BmiCommentLabel.Location = new System.Drawing.Point(80, 357);
-            this.BmiCommentLabel.Margin = new System.Windows.Forms.Padding(50, 0, 3, 0);
+            this.BmiCommentLabel.Location = new System.Drawing.Point(91, 476);
+            this.BmiCommentLabel.Margin = new System.Windows.Forms.Padding(57, 0, 3, 0);
             this.BmiCommentLabel.Name = "BmiCommentLabel";
-            this.BmiCommentLabel.Size = new System.Drawing.Size(237, 30);
+            this.BmiCommentLabel.Size = new System.Drawing.Size(269, 40);
             this.BmiCommentLabel.TabIndex = 6;
             this.BmiCommentLabel.Text = "Keep up the good work!";
             this.BmiCommentLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -137,9 +139,10 @@ namespace BeefCakeGUI
             // CancelAddingData
             // 
             this.CancelAddingData.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.CancelAddingData.Location = new System.Drawing.Point(33, 390);
+            this.CancelAddingData.Location = new System.Drawing.Point(37, 520);
+            this.CancelAddingData.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.CancelAddingData.Name = "CancelAddingData";
-            this.CancelAddingData.Size = new System.Drawing.Size(108, 27);
+            this.CancelAddingData.Size = new System.Drawing.Size(123, 36);
             this.CancelAddingData.TabIndex = 7;
             this.CancelAddingData.Text = "Cancel";
             this.CancelAddingData.UseVisualStyleBackColor = true;
@@ -147,9 +150,10 @@ namespace BeefCakeGUI
             // ApplyAddingData
             // 
             this.ApplyAddingData.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ApplyAddingData.Location = new System.Drawing.Point(648, 390);
+            this.ApplyAddingData.Location = new System.Drawing.Point(738, 520);
+            this.ApplyAddingData.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.ApplyAddingData.Name = "ApplyAddingData";
-            this.ApplyAddingData.Size = new System.Drawing.Size(119, 27);
+            this.ApplyAddingData.Size = new System.Drawing.Size(139, 36);
             this.ApplyAddingData.TabIndex = 8;
             this.ApplyAddingData.Text = "OK";
             this.ApplyAddingData.UseVisualStyleBackColor = true;
@@ -158,9 +162,9 @@ namespace BeefCakeGUI
             // 
             this.WeightLabel.AutoSize = true;
             this.WeightLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.WeightLabel.Location = new System.Drawing.Point(323, 141);
+            this.WeightLabel.Location = new System.Drawing.Point(366, 188);
             this.WeightLabel.Name = "WeightLabel";
-            this.WeightLabel.Size = new System.Drawing.Size(96, 44);
+            this.WeightLabel.Size = new System.Drawing.Size(111, 59);
             this.WeightLabel.TabIndex = 9;
             this.WeightLabel.Text = "Weight:";
             this.WeightLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -169,9 +173,9 @@ namespace BeefCakeGUI
             // 
             this.CaloriesLabel.AutoSize = true;
             this.CaloriesLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.CaloriesLabel.Location = new System.Drawing.Point(323, 185);
+            this.CaloriesLabel.Location = new System.Drawing.Point(366, 247);
             this.CaloriesLabel.Name = "CaloriesLabel";
-            this.CaloriesLabel.Size = new System.Drawing.Size(96, 60);
+            this.CaloriesLabel.Size = new System.Drawing.Size(111, 80);
             this.CaloriesLabel.TabIndex = 10;
             this.CaloriesLabel.Text = "Calories:";
             this.CaloriesLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -179,26 +183,28 @@ namespace BeefCakeGUI
             // CurrentWeightTextBox
             // 
             this.CurrentWeightTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.CurrentWeightTextBox.Location = new System.Drawing.Point(425, 151);
+            this.CurrentWeightTextBox.Location = new System.Drawing.Point(483, 204);
+            this.CurrentWeightTextBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.CurrentWeightTextBox.Name = "CurrentWeightTextBox";
-            this.CurrentWeightTextBox.Size = new System.Drawing.Size(217, 23);
+            this.CurrentWeightTextBox.Size = new System.Drawing.Size(249, 27);
             this.CurrentWeightTextBox.TabIndex = 11;
             // 
             // CurrentCaloriesTextBox
             // 
             this.CurrentCaloriesTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.CurrentCaloriesTextBox.Location = new System.Drawing.Point(425, 203);
+            this.CurrentCaloriesTextBox.Location = new System.Drawing.Point(483, 273);
+            this.CurrentCaloriesTextBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.CurrentCaloriesTextBox.Name = "CurrentCaloriesTextBox";
-            this.CurrentCaloriesTextBox.Size = new System.Drawing.Size(217, 23);
+            this.CurrentCaloriesTextBox.Size = new System.Drawing.Size(249, 27);
             this.CurrentCaloriesTextBox.TabIndex = 12;
             // 
             // CurrentBmiLabel
             // 
             this.CurrentBmiLabel.AutoSize = true;
             this.CurrentBmiLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.CurrentBmiLabel.Location = new System.Drawing.Point(147, 326);
+            this.CurrentBmiLabel.Location = new System.Drawing.Point(166, 435);
             this.CurrentBmiLabel.Name = "CurrentBmiLabel";
-            this.CurrentBmiLabel.Size = new System.Drawing.Size(170, 31);
+            this.CurrentBmiLabel.Size = new System.Drawing.Size(194, 41);
             this.CurrentBmiLabel.TabIndex = 13;
             this.CurrentBmiLabel.Text = "22.5";
             this.CurrentBmiLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -208,9 +214,9 @@ namespace BeefCakeGUI
             this.WrongWeightLabel.AutoSize = true;
             this.WrongWeightLabel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.WrongWeightLabel.ForeColor = System.Drawing.Color.Red;
-            this.WrongWeightLabel.Location = new System.Drawing.Point(648, 141);
+            this.WrongWeightLabel.Location = new System.Drawing.Point(738, 188);
             this.WrongWeightLabel.Name = "WrongWeightLabel";
-            this.WrongWeightLabel.Size = new System.Drawing.Size(119, 44);
+            this.WrongWeightLabel.Size = new System.Drawing.Size(139, 59);
             this.WrongWeightLabel.TabIndex = 14;
             this.WrongWeightLabel.Text = "Wrong data input";
             this.WrongWeightLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -220,19 +226,20 @@ namespace BeefCakeGUI
             this.WrongCaloriesLabel.AutoSize = true;
             this.WrongCaloriesLabel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.WrongCaloriesLabel.ForeColor = System.Drawing.Color.Red;
-            this.WrongCaloriesLabel.Location = new System.Drawing.Point(648, 185);
+            this.WrongCaloriesLabel.Location = new System.Drawing.Point(738, 247);
             this.WrongCaloriesLabel.Name = "WrongCaloriesLabel";
-            this.WrongCaloriesLabel.Size = new System.Drawing.Size(119, 60);
+            this.WrongCaloriesLabel.Size = new System.Drawing.Size(139, 80);
             this.WrongCaloriesLabel.TabIndex = 15;
             this.WrongCaloriesLabel.Text = "Wrong data input";
             this.WrongCaloriesLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // Form2
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(914, 600);
             this.Controls.Add(this.MeasurementPanel);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "Form2";
             this.Text = "Form2";
             this.MeasurementPanel.ResumeLayout(false);
