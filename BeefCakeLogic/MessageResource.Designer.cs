@@ -61,6 +61,24 @@ namespace BeefCakeLogic {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Given calorie count is not recognized as a number.
+        /// </summary>
+        internal static string msgCaloriesIsNotANumber {
+            get {
+                return ResourceManager.GetString("msgCaloriesIsNotANumber", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Given calorie count is outside valid range ( {0}kcal .. {1}kcal ).
+        /// </summary>
+        internal static string msgCaloriesOutsideValidRange {
+            get {
+                return ResourceManager.GetString("msgCaloriesOutsideValidRange", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Birth date has to be in the past.
         /// </summary>
         internal static string msgDateOfBirthNotInThePast {
@@ -79,7 +97,7 @@ namespace BeefCakeLogic {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Given height wasn&apos;t recognized as a number.
+        ///   Looks up a localized string similar to Given height is not recognized as a number.
         /// </summary>
         internal static string msgHightIsNotANumber {
             get {
@@ -97,7 +115,7 @@ namespace BeefCakeLogic {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Given weight wasn&apos;t recognized as a number.
+        ///   Looks up a localized string similar to Given weight is not recognized as a number.
         /// </summary>
         internal static string msgWeightIsNotANumber {
             get {

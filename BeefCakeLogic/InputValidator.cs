@@ -81,6 +81,13 @@ namespace BeefCakeLogic
             message = string.Empty;
             return true;
         }
+
+        /// <summary>
+        /// Checks if given weight value is valid
+        /// </summary>
+        /// <param name="input">Weight in kilograms</param>
+        /// <param name="message">Returned error message</param>
+        /// <returns>True if given weight is a decimal within valid range</returns>
         public bool IsWeightValid(string input, out string message)
         {
             if (!decimal.TryParse(input, out decimal parsedInput))
@@ -98,9 +105,29 @@ namespace BeefCakeLogic
             message = string.Empty;
             return true;
         }
+
+        /// <summary>
+        /// Checks if given calorie count is valid
+        /// </summary>
+        /// <param name="input">Calorie count</param>
+        /// <param name="message">Returned error message</param>
+        /// <returns>True if given calorie count is within valid range</returns>
         public bool IsCaloriesValid(string input, out string message)
         {
-            throw new NotImplementedException();
+            if (!int.TryParse(input, out int parsedInput))
+            {
+                message = MessageResource.msgCaloriesIsNotANumber;
+                return false;
+            }
+
+            if (!IsIntInRange(parsedInput, minValidCalories, maxValidCalories))
+            {
+                message = string.Format(MessageResource.msgCaloriesOutsideValidRange, minValidCalories, maxValidCalories);
+                return false;
+            }
+
+            message = string.Empty;
+            return true;
         }
 
         private bool IsIntInRange(int input, int minimum, int maximum)
