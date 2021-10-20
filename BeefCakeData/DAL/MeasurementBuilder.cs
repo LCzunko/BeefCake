@@ -5,13 +5,13 @@ namespace BeefCakeData.DAL
 {
     public static class MeasurementBuilder
     {
-        public static Measurement BuildMeasurement(DateTime date, string weight, string calories, int currentUserId)
+        public static Measurement BuildMeasurement(DateTime date, decimal weight, int calories, int currentUserId)
         {
             var newMeasurement = new Measurement()
             {
                 Date = date,
-                Weight = decimal.Parse(weight),
-                Calories = int.Parse(calories),
+                Weight = weight,
+                Calories = calories,
                 UserId = currentUserId,
             };
             return newMeasurement;
