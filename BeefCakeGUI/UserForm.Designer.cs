@@ -38,19 +38,19 @@ namespace BeefCakeGUI
             this.labelGender = new System.Windows.Forms.Label();
             this.labelHeight = new System.Windows.Forms.Label();
             this.dateTimePickerDateOfBirth = new System.Windows.Forms.DateTimePicker();
-            this.radioButtonFemale = new System.Windows.Forms.RadioButton();
-            this.radioButtonMale = new System.Windows.Forms.RadioButton();
             this.textBoxName = new System.Windows.Forms.TextBox();
             this.textBoxHeight = new System.Windows.Forms.TextBox();
             this.labelWrongName = new System.Windows.Forms.Label();
             this.labelWrongDate = new System.Windows.Forms.Label();
             this.labelWrongHeight = new System.Windows.Forms.Label();
             this.panelGender = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.radioButtonFemale = new System.Windows.Forms.RadioButton();
+            this.radioButtonMale = new System.Windows.Forms.RadioButton();
+            this.pictureBoxCartmanPointing = new System.Windows.Forms.PictureBox();
             this.userPanel.SuspendLayout();
             this.userTableLayoutPanel.SuspendLayout();
             this.panelGender.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCartmanPointing)).BeginInit();
             this.SuspendLayout();
             // 
             // userPanel
@@ -89,7 +89,7 @@ namespace BeefCakeGUI
             this.userTableLayoutPanel.Controls.Add(this.labelWrongDate, 6, 4);
             this.userTableLayoutPanel.Controls.Add(this.labelWrongHeight, 6, 8);
             this.userTableLayoutPanel.Controls.Add(this.panelGender, 6, 5);
-            this.userTableLayoutPanel.Controls.Add(this.pictureBox1, 0, 0);
+            this.userTableLayoutPanel.Controls.Add(this.pictureBoxCartmanPointing, 0, 0);
             this.userTableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.userTableLayoutPanel.Location = new System.Drawing.Point(34, 40);
             this.userTableLayoutPanel.Name = "userTableLayoutPanel";
@@ -191,30 +191,6 @@ namespace BeefCakeGUI
             this.dateTimePickerDateOfBirth.TabIndex = 7;
             this.dateTimePickerDateOfBirth.Value = new System.DateTime(2021, 10, 20, 0, 0, 0, 0);
             // 
-            // radioButtonFemale
-            // 
-            this.radioButtonFemale.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.radioButtonFemale.AutoSize = true;
-            this.radioButtonFemale.Location = new System.Drawing.Point(22, 11);
-            this.radioButtonFemale.Name = "radioButtonFemale";
-            this.radioButtonFemale.Size = new System.Drawing.Size(78, 24);
-            this.radioButtonFemale.TabIndex = 8;
-            this.radioButtonFemale.TabStop = true;
-            this.radioButtonFemale.Text = "Female";
-            this.radioButtonFemale.UseVisualStyleBackColor = true;
-            // 
-            // radioButtonMale
-            // 
-            this.radioButtonMale.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.radioButtonMale.AutoSize = true;
-            this.radioButtonMale.Location = new System.Drawing.Point(144, 11);
-            this.radioButtonMale.Name = "radioButtonMale";
-            this.radioButtonMale.Size = new System.Drawing.Size(63, 24);
-            this.radioButtonMale.TabIndex = 9;
-            this.radioButtonMale.TabStop = true;
-            this.radioButtonMale.Text = "Male";
-            this.radioButtonMale.UseVisualStyleBackColor = true;
-            // 
             // textBoxName
             // 
             this.textBoxName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
@@ -276,17 +252,41 @@ namespace BeefCakeGUI
             this.panelGender.Size = new System.Drawing.Size(246, 46);
             this.panelGender.TabIndex = 14;
             // 
-            // pictureBox1
+            // radioButtonFemale
             // 
-            this.userTableLayoutPanel.SetColumnSpan(this.pictureBox1, 4);
-            this.pictureBox1.Image = global::BeefCakeGUI.Properties.Resources.cartmanPointing;
-            this.pictureBox1.Location = new System.Drawing.Point(3, 3);
-            this.pictureBox1.Name = "pictureBox1";
-            this.userTableLayoutPanel.SetRowSpan(this.pictureBox1, 8);
-            this.pictureBox1.Size = new System.Drawing.Size(330, 410);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 15;
-            this.pictureBox1.TabStop = false;
+            this.radioButtonFemale.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.radioButtonFemale.AutoSize = true;
+            this.radioButtonFemale.Location = new System.Drawing.Point(22, 11);
+            this.radioButtonFemale.Name = "radioButtonFemale";
+            this.radioButtonFemale.Size = new System.Drawing.Size(78, 24);
+            this.radioButtonFemale.TabIndex = 8;
+            this.radioButtonFemale.TabStop = true;
+            this.radioButtonFemale.Text = "Female";
+            this.radioButtonFemale.UseVisualStyleBackColor = true;
+            // 
+            // radioButtonMale
+            // 
+            this.radioButtonMale.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.radioButtonMale.AutoSize = true;
+            this.radioButtonMale.Location = new System.Drawing.Point(144, 11);
+            this.radioButtonMale.Name = "radioButtonMale";
+            this.radioButtonMale.Size = new System.Drawing.Size(63, 24);
+            this.radioButtonMale.TabIndex = 9;
+            this.radioButtonMale.TabStop = true;
+            this.radioButtonMale.Text = "Male";
+            this.radioButtonMale.UseVisualStyleBackColor = true;
+            // 
+            // pictureBoxCartmanPointing
+            // 
+            this.userTableLayoutPanel.SetColumnSpan(this.pictureBoxCartmanPointing, 4);
+            this.pictureBoxCartmanPointing.Image = global::BeefCakeGUI.Properties.Resources.cartmanPointing;
+            this.pictureBoxCartmanPointing.Location = new System.Drawing.Point(3, 3);
+            this.pictureBoxCartmanPointing.Name = "pictureBoxCartmanPointing";
+            this.userTableLayoutPanel.SetRowSpan(this.pictureBoxCartmanPointing, 8);
+            this.pictureBoxCartmanPointing.Size = new System.Drawing.Size(330, 410);
+            this.pictureBoxCartmanPointing.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxCartmanPointing.TabIndex = 15;
+            this.pictureBoxCartmanPointing.TabStop = false;
             // 
             // UserForm
             // 
@@ -304,7 +304,7 @@ namespace BeefCakeGUI
             this.userTableLayoutPanel.PerformLayout();
             this.panelGender.ResumeLayout(false);
             this.panelGender.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCartmanPointing)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -328,6 +328,6 @@ namespace BeefCakeGUI
         private System.Windows.Forms.Label labelWrongDate;
         private System.Windows.Forms.Label labelWrongHeight;
         private System.Windows.Forms.Panel panelGender;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBoxCartmanPointing;
     }
 }
