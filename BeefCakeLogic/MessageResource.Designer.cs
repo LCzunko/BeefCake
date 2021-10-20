@@ -106,6 +106,15 @@ namespace BeefCakeLogic {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to User name can not be empty.
+        /// </summary>
+        internal static string msgUserNameEmpty {
+            get {
+                return ResourceManager.GetString("msgUserNameEmpty", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to This user name is already taken.
         /// </summary>
         internal static string msgUserNameTaken {

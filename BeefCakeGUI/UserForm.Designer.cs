@@ -223,6 +223,7 @@ namespace BeefCakeGUI
             this.labelWrongName.Name = "labelWrongName";
             this.labelWrongName.Size = new System.Drawing.Size(0, 20);
             this.labelWrongName.TabIndex = 11;
+            this.labelWrongName.Text = "Empty user name";
             // 
             // labelWrongDate
             // 
