@@ -45,6 +45,10 @@ namespace BeefCakeGUI
         {
             usersComboBox.DataSource = userDao.ReadAll();
             usersComboBox.DisplayMember = "Name";
+            if (activeUser != null)
+            {
+                usersComboBox.SelectedItem = activeUser;
+            }
         }
 
         private void SwitchPanel(Panel panelToSwitch)
