@@ -113,10 +113,10 @@ namespace BeefCakeGUI
             this.loginTableLayoutPanel.SetColumnSpan(this.welcomeLabel, 4);
             this.welcomeLabel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.welcomeLabel.Location = new System.Drawing.Point(0, 0);
-            this.welcomeLabel.Margin = new System.Windows.Forms.Padding(0, 0, 0, 12);
+            this.welcomeLabel.Margin = new System.Windows.Forms.Padding(0, 0, 0, 10);
             this.welcomeLabel.Name = "welcomeLabel";
             this.welcomeLabel.Padding = new System.Windows.Forms.Padding(10, 10, 13, 10);
-            this.welcomeLabel.Size = new System.Drawing.Size(740, 95);
+            this.welcomeLabel.Size = new System.Drawing.Size(740, 97);
             this.welcomeLabel.TabIndex = 0;
             this.welcomeLabel.Text = "Welcome to BEEFCAKE!\r\n\r\nThe best health app. Track your weight and calorie intake" +
     ", calculate your BMI.\r\n\r\nGet in shape FAST. Look your BEST. Use BEEFCAKE!";
