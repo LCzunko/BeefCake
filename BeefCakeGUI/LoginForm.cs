@@ -8,6 +8,7 @@ namespace BeefCakeGUI
     {
         private void userAddButton_Click(object sender, EventArgs e)
         {
+            isUserPanelInEditMode = false;
             this.SuspendLayout();
             LoadUserPanelData();
             SwitchPanel(userPanel);

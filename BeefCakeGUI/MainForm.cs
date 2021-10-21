@@ -13,6 +13,7 @@ namespace BeefCakeGUI
         private Panel activePanel;
         private InputValidator inputValidator;
         private MeasurementController measurementController;
+        private bool isUserPanelInEditMode;
 
         public MainForm(IUserDao userDao, IMeasurementDao measurementDao, InputValidator inputValidator, MeasurementController measurementController)
         {
