@@ -134,6 +134,9 @@
   <data name="msgHightIsNotANumber" xml:space="preserve">
     <value>Given height is not recognized as a number</value>
   </data>
+  <data name="msgUserNameEmpty" xml:space="preserve">
+    <value>User name can not be empty</value>
+  </data>
   <data name="msgUserNameTaken" xml:space="preserve">
     <value>This user name is already taken</value>
   </data>
