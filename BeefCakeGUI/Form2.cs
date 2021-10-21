@@ -28,33 +28,33 @@ namespace BeefCakeGUI
             measurementController = new(measurementDao);
             activeUser = userDao.ReadAll().FirstOrDefault(x => x.Name == "Sylwia");
             currentDate = dateTimePicker.Value;
-            currentMeasurement = GetUserMeasurementForDate(activeUser, currentDate);
+            currentMeasurement = measurementController.GetUserMeasurementForDate(activeUser, currentDate);
             inputValidator = new(userDao);
             LoadMeasurementPanelData();
         }
 
         private void LoadMeasurementPanelData()
         {
-            ClearWrongDataLabels();
-            DisplayCurrentMeasurement(currentMeasurement);
+            DisplayCurrentMeasurement();
         }
 
-        private void SwitchPanel(Panel panelToSwitch)
-        {
-            activePanel.Enabled = false;
-            activePanel.Visible = false;
-            activePanel = panelToSwitch;
-            activePanel.Enabled = true;
-            activePanel.Visible = true;
-        }
+        //private void SwitchPanel(Panel panelToSwitch)
+        //{
+        //    activePanel.Enabled = false;
+        //    activePanel.Visible = false;
+        //    activePanel = panelToSwitch;
+        //    activePanel.Enabled = true;
+        //    activePanel.Visible = true;
+        //}
 
-        private void CancelAddingData_Click(object sender, EventArgs e)
-        {
-            this.SuspendLayout();
-            //TODO LoadGraphPanelData();
-            //SwitchPanel(graphPanel);
-            this.ResumeLayout();
-        }
+        //private void CancelAddingData_Click(object sender, EventArgs e)
+        //{
+        //    this.SuspendLayout();
+        //    //TODO LoadGraphPanelData();
+        //    //SwitchPanel(graphPanel);
+        //    this.ResumeLayout();
+        //}
+
         private void ApplyAddingData_Click(object sender, EventArgs e)
         {
             int userCalories;
@@ -88,10 +88,10 @@ namespace BeefCakeGUI
 
         private void dateTimePicker_ValueChanged(object sender, EventArgs e)
         {
-            ClearWrongDataLabels();
             currentDate = dateTimePicker.Value;
-            var measurement = GetUserMeasurementForDate(activeUser, currentDate);
-            DisplayCurrentMeasurement(measurement);
+            var measurement = measurementController.GetUserMeasurementForDate(activeUser, currentDate);
+            currentMeasurement = measurement;
+            DisplayCurrentMeasurement();
         }
 
         private void CurrentWeightTextBox_TextChanged(object sender, EventArgs e)
@@ -118,7 +118,7 @@ namespace BeefCakeGUI
                 WrongCaloriesLabel.Text = caloriesMessage;
                 if (!validWeightInput || !validCaloryInput) ApplyAddingData.Enabled = false;
                 else ApplyAddingData.Enabled = true;
-                AdjustToInputChanges(weight, calories, validWeightInput, validCaloryInput);
+                AdjustToInputChanges(weight, validWeightInput);
             }
         }
 
@@ -127,44 +127,53 @@ namespace BeefCakeGUI
             return "Measurements for " + currentDate.ToString("d");
         }
 
-        private void DisplayCurrentMeasurement(Measurement measurement)
+        private void DisplayCurrentMeasurement()
         {
             ClearWrongDataLabels();
             MeasurementDateLabel.Text = SetCurrentDate();
-            if (measurement == null)
+            if (currentMeasurement != null)
             {
-                DisplayNoMeasurement();
-                ClearInputBoxes();
+                DisplayFilledMeasurement(currentMeasurement);
             }
-            else DisplayFilledMeasurement(measurement);
+            else
+            {
+                DisplayEmptyMeasurement();
+            }
         }
 
-        private void DisplayBmiInfo(Measurement measurement)
+        private void DisplayBmiInfo(decimal height, decimal weight)
         {
-            var currentBmi = Math.Round(MeasurementController.CalculateBmi(activeUser, measurement), 1);
-            CurrentBmiLabel.Text = currentBmi.ToString();
+            var currentBmi = Math.Round(MeasurementController.CalculateBmi(height, weight), 1);
+            if (currentBmi != 0)
+            {
+                CurrentBmiLabel.Text = currentBmi.ToString();
+            }
+            else
+            {
+                CurrentBmiLabel.Text = "Unknown";
+                currentMeasurement = null;
+            }
             DisplayFeedbackAccordingToBmi(currentBmi);
         }
 
         private void DisplayFilledMeasurement(Measurement measurement)
         {
-            DisplayBmiInfo(measurement);
-            currentMeasurement = measurement;
+            DisplayBmiInfo(activeUser.Height, measurement.Weight);
             CurrentCaloriesTextBox.Text = measurement.Calories.ToString();
             CurrentWeightTextBox.Text = measurement.Weight.ToString();
         }
 
-        private void DisplayNoMeasurement()
+        private void DisplayEmptyMeasurement()
         {
-            currentMeasurement = null;
-            CurrentBmiLabel.Text = "Unknown";
-            BmiCommentLabel.Text = string.Empty;
             MeasurementPicture.Image = Properties.Resources.Mysterion;
+            BmiCommentLabel.Text = string.Empty;
+            CurrentBmiLabel.Text = "Unknown";
+            currentMeasurement = null;
         }
 
         private void DisplayFeedbackAccordingToBmi(decimal bmi)
         {
-            if (bmi <= 22)
+            if (bmi <= 22 && bmi > 0)
             {
                 MeasurementPicture.Image = Properties.Resources.Workforce_weight_gain_ad_actor;
                 BmiCommentLabel.Text = "Nice! Keep it lean!";
@@ -174,10 +183,14 @@ namespace BeefCakeGUI
                 MeasurementPicture.Image = Properties.Resources.Cartman_Beefcake;
                 BmiCommentLabel.Text = "Keep up the good work!";
             }
-            else
+            else if (bmi > 25)
             {
                 MeasurementPicture.Image = Properties.Resources.CartmanAlterEgoObese;
                 BmiCommentLabel.Text = "BEEFCAKE!";
+            }
+            else
+            {
+                DisplayEmptyMeasurement();
             }
         }
 
@@ -203,34 +216,20 @@ namespace BeefCakeGUI
         private void AddNewMeasurement(decimal userWeight, int userCalories)
         {
             var measurement = MeasurementBuilder.BuildMeasurement(currentDate, userWeight, userCalories, activeUser.Id);
-            measurement.Bmi = Math.Round(MeasurementController.CalculateBmi(activeUser, measurement), 1);
+            measurement.Bmi = Math.Round(MeasurementController.CalculateBmi(activeUser.Height, measurement.Weight), 1);
             measurementController.AddMeasurement(measurement);
             currentMeasurement = measurement;
         }
 
-        private Measurement GetUserMeasurementForDate(User current, DateTime dateTime)
+        private void AdjustToInputChanges(string weight, bool validWeightInput)
         {
-            //move to controller
-            return measurementDao.ReadAll().FirstOrDefault(x => x.Date == dateTime && x.UserId == current.Id);
-        }
-
-        private void AdjustToInputChanges(string weight, string calories, bool validWeightInput, bool validCaloryInput)
-        {
-            if (currentMeasurement == null)
+            if (weight != string.Empty && validWeightInput)
             {
-                DisplayNoMeasurement();
+                DisplayBmiInfo(activeUser.Height, decimal.Parse(weight));
             }
-            else
+            else if (weight == string.Empty)
             {
-                if (weight != string.Empty && validWeightInput && validCaloryInput)
-                {
-                    currentMeasurement.Weight = decimal.Parse(weight);
-                }
-                if (calories != string.Empty && validWeightInput && validCaloryInput)
-                {
-                    currentMeasurement.Calories = int.Parse(calories);
-                }
-                DisplayBmiInfo(currentMeasurement);
+                DisplayEmptyMeasurement();
             }
         }
     }

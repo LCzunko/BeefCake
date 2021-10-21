@@ -1,6 +1,7 @@
 ﻿using BeefCakeData.DAL.DAOInterface;
 using BeefCakeData.Model;
 using System;
+using System.Linq;
 
 namespace BeefCakeLogic
 {
@@ -19,19 +20,16 @@ namespace BeefCakeLogic
         /// <param name="activeUser">User to calculate BMI for</param>
         /// <param name="measurement">Measurement to use</param>
         /// <returns></returns>
-        public static decimal CalculateBmi(User activeUser, Measurement measurement)
+        public static decimal CalculateBmi(decimal height, decimal weight)
         {
-            if (activeUser == null)
-            {
-                throw new ArgumentNullException(nameof(activeUser));
-            }
-            if (measurement == null)
-            {
-                throw new ArgumentNullException(nameof(measurement));
-            }
-            decimal heightInMeters = activeUser.Height * 0.01M;
-            decimal bmi = measurement.Weight / (heightInMeters * heightInMeters);
+            decimal heightInMeters = height * 0.01M;
+            decimal bmi = weight / (heightInMeters * heightInMeters);
             return bmi;
+        }
+
+        public Measurement GetUserMeasurementForDate(User current, DateTime dateTime)
+        {
+            return _measurementDao.ReadAll().FirstOrDefault(x => x.Date == dateTime && x.UserId == current.Id);
         }
 
         public void EditMeasurement(Measurement measurement)
