@@ -81,18 +81,15 @@ namespace BeefCakeGUI
 
         private void ValidateInputs()
         {
-            if (CurrentWeightTextBox.Text != string.Empty || CurrentCaloriesTextBox.Text != string.Empty)
-            {
-                var weight = CurrentWeightTextBox.Text;
-                var calories = CurrentCaloriesTextBox.Text;
-                var validWeightInput = inputValidator.IsWeightValid(weight, out string weightMessage);
-                var validCaloryInput = inputValidator.IsCaloriesValid(calories, out string caloriesMessage);
-                WrongWeightLabel.Text = weightMessage;
-                WrongCaloriesLabel.Text = caloriesMessage;
-                if (!validWeightInput || !validCaloryInput) ApplyAddingData.Enabled = false;
-                else ApplyAddingData.Enabled = true;
-                AdjustToInputChanges(weight, validWeightInput);
-            }
+            var weight = CurrentWeightTextBox.Text;
+            var calories = CurrentCaloriesTextBox.Text;
+            var validWeightInput = inputValidator.IsWeightValid(weight, out string weightMessage);
+            var validCaloryInput = inputValidator.IsCaloriesValid(calories, out string caloriesMessage);
+            WrongWeightLabel.Text = weightMessage;
+            WrongCaloriesLabel.Text = caloriesMessage;
+            if (!validWeightInput || !validCaloryInput) ApplyAddingData.Enabled = false;
+            else ApplyAddingData.Enabled = true;
+            AdjustToInputChanges(weight, validWeightInput);
         }
 
         private string SetCurrentDate()
@@ -118,15 +115,7 @@ namespace BeefCakeGUI
         private void DisplayBmiInfo(decimal height, decimal weight)
         {
             var currentBmi = Math.Round(MeasurementController.CalculateBmi(height, weight), 1);
-            if (currentBmi != 0)
-            {
-                CurrentBmiLabel.Text = currentBmi.ToString();
-            }
-            else
-            {
-                CurrentBmiLabel.Text = "Unknown";
-                currentMeasurement = null;
-            }
+            CurrentBmiLabel.Text = currentBmi.ToString();
             DisplayFeedbackAccordingToBmi(currentBmi);
         }
 
@@ -142,7 +131,6 @@ namespace BeefCakeGUI
             MeasurementPicture.Image = Properties.Resources.Mysterion;
             BmiCommentLabel.Text = string.Empty;
             CurrentBmiLabel.Text = "Unknown";
-            currentMeasurement = null;
         }
 
         private void DisplayFeedbackAccordingToBmi(decimal bmi)
