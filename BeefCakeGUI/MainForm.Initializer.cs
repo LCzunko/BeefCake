@@ -432,7 +432,7 @@
             // 
             this.BmiLabel.AutoSize = true;
             this.BmiLabel.Dock = System.Windows.Forms.DockStyle.Right;
-            this.BmiLabel.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.BmiLabel.Font = new System.Drawing.Font("Verdana", 09.80F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.BmiLabel.Location = new System.Drawing.Point(95, 339);
             this.BmiLabel.Margin = new System.Windows.Forms.Padding(9, 0, 3, 0);
             this.BmiLabel.Name = "BmiLabel";
@@ -445,7 +445,7 @@
             // 
             this.CurrentBmiLabel.AutoSize = true;
             this.CurrentBmiLabel.Dock = System.Windows.Forms.DockStyle.Left;
-            this.CurrentBmiLabel.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.CurrentBmiLabel.Font = new System.Drawing.Font("Verdana", 09.80F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.CurrentBmiLabel.Location = new System.Drawing.Point(164, 339);
             this.CurrentBmiLabel.Name = "CurrentBmiLabel";
             this.CurrentBmiLabel.Size = new System.Drawing.Size(32, 49);
@@ -540,6 +540,7 @@
             this.MeasurementDateLabel.Size = new System.Drawing.Size(189, 15);
             this.MeasurementDateLabel.TabIndex = 18;
             this.MeasurementDateLabel.Text = "Measurements for [date]:";
+            this.MeasurementDateLabel.Font = new System.Drawing.Font("Verdana", 09.80F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.MeasurementDateLabel.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             // 
             // 
