@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using BeefCakeData.DAL.DAOInterface;
 using BeefCakeData.Model;
@@ -35,7 +28,7 @@ namespace BeefCakeGUI
         private void userConfirmButton_Click(object sender, EventArgs e)
         {
             this.SuspendLayout();
-            activeUser = (User)usersComboBox.SelectedItem;
+            activeUser = (User)loginUsersComboBox.SelectedItem;
             //TODO LoadGraphPanelData();
             //SwitchPanel(graphPanel);
             this.ResumeLayout();
@@ -43,11 +36,11 @@ namespace BeefCakeGUI
 
         private void LoadLoginPanelData()
         {
-            usersComboBox.DataSource = userDao.ReadAll();
-            usersComboBox.DisplayMember = "Name";
+            loginUsersComboBox.DataSource = userDao.ReadAll();
+            loginUsersComboBox.DisplayMember = "Name";
             if (activeUser != null)
             {
-                usersComboBox.SelectedItem = activeUser;
+                loginUsersComboBox.SelectedItem = activeUser;
             }
         }
 

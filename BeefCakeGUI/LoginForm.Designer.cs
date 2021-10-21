@@ -31,16 +31,16 @@ namespace BeefCakeGUI
         {
             this.loginPanel = new System.Windows.Forms.Panel();
             this.loginTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
-            this.userAddButton = new System.Windows.Forms.Button();
-            this.addUserLabel = new System.Windows.Forms.Label();
-            this.welcomeLabel = new System.Windows.Forms.Label();
-            this.selectUserLabel = new System.Windows.Forms.Label();
-            this.usersComboBox = new System.Windows.Forms.ComboBox();
-            this.userConfirmButton = new System.Windows.Forms.Button();
-            this.welcomePictureBox = new System.Windows.Forms.PictureBox();
+            this.loginUserButton = new System.Windows.Forms.Button();
+            this.loginAddUserLabel = new System.Windows.Forms.Label();
+            this.loginWelcomeLabel = new System.Windows.Forms.Label();
+            this.loginSelectUserLabel = new System.Windows.Forms.Label();
+            this.loginUsersComboBox = new System.Windows.Forms.ComboBox();
+            this.loginGraphButton = new System.Windows.Forms.Button();
+            this.loginWelcomePictureBox = new System.Windows.Forms.PictureBox();
             this.loginPanel.SuspendLayout();
             this.loginTableLayoutPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.welcomePictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.loginWelcomePictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // loginPanel
@@ -60,13 +60,13 @@ namespace BeefCakeGUI
             this.loginTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
             this.loginTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
             this.loginTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.loginTableLayoutPanel.Controls.Add(this.userAddButton, 0, 4);
-            this.loginTableLayoutPanel.Controls.Add(this.addUserLabel, 0, 3);
-            this.loginTableLayoutPanel.Controls.Add(this.welcomeLabel, 0, 0);
-            this.loginTableLayoutPanel.Controls.Add(this.selectUserLabel, 0, 1);
-            this.loginTableLayoutPanel.Controls.Add(this.usersComboBox, 0, 2);
-            this.loginTableLayoutPanel.Controls.Add(this.userConfirmButton, 2, 2);
-            this.loginTableLayoutPanel.Controls.Add(this.welcomePictureBox, 3, 1);
+            this.loginTableLayoutPanel.Controls.Add(this.loginUserButton, 0, 4);
+            this.loginTableLayoutPanel.Controls.Add(this.loginAddUserLabel, 0, 3);
+            this.loginTableLayoutPanel.Controls.Add(this.loginWelcomeLabel, 0, 0);
+            this.loginTableLayoutPanel.Controls.Add(this.loginSelectUserLabel, 0, 1);
+            this.loginTableLayoutPanel.Controls.Add(this.loginUsersComboBox, 0, 2);
+            this.loginTableLayoutPanel.Controls.Add(this.loginGraphButton, 2, 2);
+            this.loginTableLayoutPanel.Controls.Add(this.loginWelcomePictureBox, 3, 1);
             this.loginTableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.loginTableLayoutPanel.GrowStyle = System.Windows.Forms.TableLayoutPanelGrowStyle.FixedSize;
             this.loginTableLayoutPanel.Location = new System.Drawing.Point(30, 30);
@@ -81,95 +81,95 @@ namespace BeefCakeGUI
             this.loginTableLayoutPanel.Size = new System.Drawing.Size(740, 390);
             this.loginTableLayoutPanel.TabIndex = 0;
             // 
-            // userAddButton
+            // loginUserButton
             // 
-            this.userAddButton.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.userAddButton.Image = global::BeefCakeGUI.Properties.Resources.Add_16x;
-            this.userAddButton.Location = new System.Drawing.Point(10, 273);
-            this.userAddButton.Margin = new System.Windows.Forms.Padding(10, 9, 6, 92);
-            this.userAddButton.Name = "userAddButton";
-            this.userAddButton.Size = new System.Drawing.Size(58, 25);
-            this.userAddButton.TabIndex = 5;
-            this.userAddButton.UseVisualStyleBackColor = true;
-            this.userAddButton.Click += new System.EventHandler(this.userAddButton_Click);
+            this.loginUserButton.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.loginUserButton.Image = global::BeefCakeGUI.Properties.Resources.Add_16x;
+            this.loginUserButton.Location = new System.Drawing.Point(10, 273);
+            this.loginUserButton.Margin = new System.Windows.Forms.Padding(10, 9, 6, 92);
+            this.loginUserButton.Name = "loginUserButton";
+            this.loginUserButton.Size = new System.Drawing.Size(58, 25);
+            this.loginUserButton.TabIndex = 5;
+            this.loginUserButton.UseVisualStyleBackColor = true;
+            this.loginUserButton.Click += new System.EventHandler(this.userAddButton_Click);
             // 
-            // addUserLabel
+            // loginAddUserLabel
             // 
-            this.addUserLabel.AutoSize = true;
-            this.loginTableLayoutPanel.SetColumnSpan(this.addUserLabel, 3);
-            this.addUserLabel.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.addUserLabel.Location = new System.Drawing.Point(0, 249);
-            this.addUserLabel.Margin = new System.Windows.Forms.Padding(0);
-            this.addUserLabel.Name = "addUserLabel";
-            this.addUserLabel.Padding = new System.Windows.Forms.Padding(10, 0, 3, 0);
-            this.addUserLabel.Size = new System.Drawing.Size(370, 15);
-            this.addUserLabel.TabIndex = 4;
-            this.addUserLabel.Text = "Or register as a new user:";
+            this.loginAddUserLabel.AutoSize = true;
+            this.loginTableLayoutPanel.SetColumnSpan(this.loginAddUserLabel, 3);
+            this.loginAddUserLabel.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.loginAddUserLabel.Location = new System.Drawing.Point(0, 249);
+            this.loginAddUserLabel.Margin = new System.Windows.Forms.Padding(0);
+            this.loginAddUserLabel.Name = "loginAddUserLabel";
+            this.loginAddUserLabel.Padding = new System.Windows.Forms.Padding(10, 0, 3, 0);
+            this.loginAddUserLabel.Size = new System.Drawing.Size(370, 15);
+            this.loginAddUserLabel.TabIndex = 4;
+            this.loginAddUserLabel.Text = "Or register as a new user:";
             // 
-            // welcomeLabel
+            // loginWelcomeLabel
             // 
-            this.welcomeLabel.AutoSize = true;
-            this.welcomeLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.loginTableLayoutPanel.SetColumnSpan(this.welcomeLabel, 4);
-            this.welcomeLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.welcomeLabel.Location = new System.Drawing.Point(0, 0);
-            this.welcomeLabel.Margin = new System.Windows.Forms.Padding(0, 0, 0, 10);
-            this.welcomeLabel.Name = "welcomeLabel";
-            this.welcomeLabel.Padding = new System.Windows.Forms.Padding(10, 10, 13, 10);
-            this.welcomeLabel.Size = new System.Drawing.Size(740, 97);
-            this.welcomeLabel.TabIndex = 0;
-            this.welcomeLabel.Text = "Welcome to BEEFCAKE!\r\n\r\nThe best health app. Track your weight and calorie intake" +
+            this.loginWelcomeLabel.AutoSize = true;
+            this.loginWelcomeLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.loginTableLayoutPanel.SetColumnSpan(this.loginWelcomeLabel, 4);
+            this.loginWelcomeLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.loginWelcomeLabel.Location = new System.Drawing.Point(0, 0);
+            this.loginWelcomeLabel.Margin = new System.Windows.Forms.Padding(0, 0, 0, 10);
+            this.loginWelcomeLabel.Name = "loginWelcomeLabel";
+            this.loginWelcomeLabel.Padding = new System.Windows.Forms.Padding(10);
+            this.loginWelcomeLabel.Size = new System.Drawing.Size(740, 97);
+            this.loginWelcomeLabel.TabIndex = 0;
+            this.loginWelcomeLabel.Text = "Welcome to BEEFCAKE!\r\n\r\nThe best health app. Track your weight and calorie intake" +
     ", calculate your BMI.\r\n\r\nGet in shape FAST. Look your BEST. Use BEEFCAKE!";
             // 
-            // selectUserLabel
+            // loginSelectUserLabel
             // 
-            this.selectUserLabel.AutoSize = true;
-            this.loginTableLayoutPanel.SetColumnSpan(this.selectUserLabel, 3);
-            this.selectUserLabel.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.selectUserLabel.Location = new System.Drawing.Point(0, 162);
-            this.selectUserLabel.Margin = new System.Windows.Forms.Padding(0);
-            this.selectUserLabel.Name = "selectUserLabel";
-            this.selectUserLabel.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.selectUserLabel.Size = new System.Drawing.Size(370, 15);
-            this.selectUserLabel.TabIndex = 1;
-            this.selectUserLabel.Text = "Log in as an existing user:";
+            this.loginSelectUserLabel.AutoSize = true;
+            this.loginTableLayoutPanel.SetColumnSpan(this.loginSelectUserLabel, 3);
+            this.loginSelectUserLabel.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.loginSelectUserLabel.Location = new System.Drawing.Point(0, 162);
+            this.loginSelectUserLabel.Margin = new System.Windows.Forms.Padding(0);
+            this.loginSelectUserLabel.Name = "loginSelectUserLabel";
+            this.loginSelectUserLabel.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.loginSelectUserLabel.Size = new System.Drawing.Size(370, 15);
+            this.loginSelectUserLabel.TabIndex = 1;
+            this.loginSelectUserLabel.Text = "Log in as an existing user:";
             // 
-            // usersComboBox
+            // loginUsersComboBox
             // 
-            this.loginTableLayoutPanel.SetColumnSpan(this.usersComboBox, 2);
-            this.usersComboBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.usersComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.usersComboBox.FormattingEnabled = true;
-            this.usersComboBox.Location = new System.Drawing.Point(13, 187);
-            this.usersComboBox.Margin = new System.Windows.Forms.Padding(13, 10, 0, 0);
-            this.usersComboBox.Name = "usersComboBox";
-            this.usersComboBox.Size = new System.Drawing.Size(283, 23);
-            this.usersComboBox.TabIndex = 2;
+            this.loginTableLayoutPanel.SetColumnSpan(this.loginUsersComboBox, 2);
+            this.loginUsersComboBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.loginUsersComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.loginUsersComboBox.FormattingEnabled = true;
+            this.loginUsersComboBox.Location = new System.Drawing.Point(13, 187);
+            this.loginUsersComboBox.Margin = new System.Windows.Forms.Padding(13, 10, 0, 0);
+            this.loginUsersComboBox.Name = "loginUsersComboBox";
+            this.loginUsersComboBox.Size = new System.Drawing.Size(283, 23);
+            this.loginUsersComboBox.TabIndex = 2;
             // 
-            // userConfirmButton
+            // loginGraphButton
             // 
-            this.userConfirmButton.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.userConfirmButton.Image = global::BeefCakeGUI.Properties.Resources.Checkmark_16x;
-            this.userConfirmButton.Location = new System.Drawing.Point(304, 186);
-            this.userConfirmButton.Margin = new System.Windows.Forms.Padding(8, 9, 8, 24);
-            this.userConfirmButton.Name = "userConfirmButton";
-            this.userConfirmButton.Size = new System.Drawing.Size(58, 25);
-            this.userConfirmButton.TabIndex = 3;
-            this.userConfirmButton.UseVisualStyleBackColor = true;
-            this.userConfirmButton.Click += new System.EventHandler(this.userConfirmButton_Click);
+            this.loginGraphButton.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.loginGraphButton.Image = global::BeefCakeGUI.Properties.Resources.Checkmark_16x;
+            this.loginGraphButton.Location = new System.Drawing.Point(304, 186);
+            this.loginGraphButton.Margin = new System.Windows.Forms.Padding(8, 9, 8, 24);
+            this.loginGraphButton.Name = "loginGraphButton";
+            this.loginGraphButton.Size = new System.Drawing.Size(58, 25);
+            this.loginGraphButton.TabIndex = 3;
+            this.loginGraphButton.UseVisualStyleBackColor = true;
+            this.loginGraphButton.Click += new System.EventHandler(this.userConfirmButton_Click);
             // 
-            // welcomePictureBox
+            // loginWelcomePictureBox
             // 
-            this.welcomePictureBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.welcomePictureBox.Image = global::BeefCakeGUI.Properties.Resources.Cartman_Beefcake;
-            this.welcomePictureBox.Location = new System.Drawing.Point(370, 107);
-            this.welcomePictureBox.Margin = new System.Windows.Forms.Padding(0);
-            this.welcomePictureBox.Name = "welcomePictureBox";
-            this.loginTableLayoutPanel.SetRowSpan(this.welcomePictureBox, 4);
-            this.welcomePictureBox.Size = new System.Drawing.Size(370, 283);
-            this.welcomePictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.welcomePictureBox.TabIndex = 6;
-            this.welcomePictureBox.TabStop = false;
+            this.loginWelcomePictureBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.loginWelcomePictureBox.Image = global::BeefCakeGUI.Properties.Resources.Cartman_Beefcake;
+            this.loginWelcomePictureBox.Location = new System.Drawing.Point(370, 107);
+            this.loginWelcomePictureBox.Margin = new System.Windows.Forms.Padding(0);
+            this.loginWelcomePictureBox.Name = "loginWelcomePictureBox";
+            this.loginTableLayoutPanel.SetRowSpan(this.loginWelcomePictureBox, 4);
+            this.loginWelcomePictureBox.Size = new System.Drawing.Size(370, 283);
+            this.loginWelcomePictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.loginWelcomePictureBox.TabIndex = 6;
+            this.loginWelcomePictureBox.TabStop = false;
             // 
             // LoginForm
             // 
@@ -185,7 +185,7 @@ namespace BeefCakeGUI
             this.loginPanel.ResumeLayout(false);
             this.loginTableLayoutPanel.ResumeLayout(false);
             this.loginTableLayoutPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.welcomePictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.loginWelcomePictureBox)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -194,12 +194,12 @@ namespace BeefCakeGUI
 
         private System.Windows.Forms.Panel loginPanel;
         private System.Windows.Forms.TableLayoutPanel loginTableLayoutPanel;
-        private System.Windows.Forms.Label welcomeLabel;
-        private System.Windows.Forms.Label selectUserLabel;
-        private System.Windows.Forms.ComboBox usersComboBox;
-        private System.Windows.Forms.Button userConfirmButton;
-        private System.Windows.Forms.Button userAddButton;
-        private System.Windows.Forms.Label addUserLabel;
-        private System.Windows.Forms.PictureBox welcomePictureBox;
+        private System.Windows.Forms.Label loginWelcomeLabel;
+        private System.Windows.Forms.Label loginSelectUserLabel;
+        private System.Windows.Forms.ComboBox loginUsersComboBox;
+        private System.Windows.Forms.Button loginGraphButton;
+        private System.Windows.Forms.Button loginUserButton;
+        private System.Windows.Forms.Label loginAddUserLabel;
+        private System.Windows.Forms.PictureBox loginWelcomePictureBox;
     }
 }

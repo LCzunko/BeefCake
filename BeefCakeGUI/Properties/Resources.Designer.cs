@@ -99,5 +99,215 @@ namespace BeefCakeGUI.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap EditDocument_16x {
+            get {
+                object obj = ResourceManager.GetObject("EditDocument_16x", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap EditManifest_16x {
+            get {
+                object obj = ResourceManager.GetObject("EditManifest_16x", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap SignIn_16x {
+            get {
+                object obj = ResourceManager.GetObject("SignIn_16x", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Watch your portion sizes..
+        /// </summary>
+        internal static string Tip1 {
+            get {
+                return ResourceManager.GetString("Tip1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Plan your meals..
+        /// </summary>
+        internal static string Tip10 {
+            get {
+                return ResourceManager.GetString("Tip10", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Keep a positive attitude..
+        /// </summary>
+        internal static string Tip11 {
+            get {
+                return ResourceManager.GetString("Tip11", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Think for the long term..
+        /// </summary>
+        internal static string Tip12 {
+            get {
+                return ResourceManager.GetString("Tip12", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Make gradual changes..
+        /// </summary>
+        internal static string Tip13 {
+            get {
+                return ResourceManager.GetString("Tip13", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Eat slowly..
+        /// </summary>
+        internal static string Tip14 {
+            get {
+                return ResourceManager.GetString("Tip14", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Be more active..
+        /// </summary>
+        internal static string Tip15 {
+            get {
+                return ResourceManager.GetString("Tip15", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sit less and move more..
+        /// </summary>
+        internal static string Tip16 {
+            get {
+                return ResourceManager.GetString("Tip16", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Look for healthy recipes..
+        /// </summary>
+        internal static string Tip17 {
+            get {
+                return ResourceManager.GetString("Tip17", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Manage your hunger..
+        /// </summary>
+        internal static string Tip18 {
+            get {
+                return ResourceManager.GetString("Tip18", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Close the kitchen at night..
+        /// </summary>
+        internal static string Tip19 {
+            get {
+                return ResourceManager.GetString("Tip19", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Track what you eat..
+        /// </summary>
+        internal static string Tip2 {
+            get {
+                return ResourceManager.GetString("Tip2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Control your environments..
+        /// </summary>
+        internal static string Tip20 {
+            get {
+                return ResourceManager.GetString("Tip20", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Exercise daily..
+        /// </summary>
+        internal static string Tip3 {
+            get {
+                return ResourceManager.GetString("Tip3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Make a goal and stick to it..
+        /// </summary>
+        internal static string Tip4 {
+            get {
+                return ResourceManager.GetString("Tip4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Get more sleep..
+        /// </summary>
+        internal static string Tip5 {
+            get {
+                return ResourceManager.GetString("Tip5", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Drink more water..
+        /// </summary>
+        internal static string Tip6 {
+            get {
+                return ResourceManager.GetString("Tip6", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Fill up on fiber..
+        /// </summary>
+        internal static string Tip7 {
+            get {
+                return ResourceManager.GetString("Tip7", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ditch added sugar..
+        /// </summary>
+        internal static string Tip8 {
+            get {
+                return ResourceManager.GetString("Tip8", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Find workouts you enjoy..
+        /// </summary>
+        internal static string Tip9 {
+            get {
+                return ResourceManager.GetString("Tip9", resourceCulture);
+            }
+        }
     }
 }
