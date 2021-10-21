@@ -67,7 +67,7 @@ namespace BeefCakeGUI
                         menuText.Append("You are overweight.\r\n\r\nTry to bring it down!");
                         break;
                     case >= 30M:
-                        menuText.Append("You are obese.\r\n\r\nWork on your lifestile and see a doctor!");
+                        menuText.Append("You are obese.\r\n\r\nWork on your lifestyle and see a doctor!");
                         break;
                 }
                 menuText.Append("\r\n\r\n");
