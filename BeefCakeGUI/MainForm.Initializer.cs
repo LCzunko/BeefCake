@@ -349,7 +349,7 @@
             this.TableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 122F));
             this.TableLayoutPanel.Controls.Add(this.MeasurementPicture, 0, 0);
             this.TableLayoutPanel.Controls.Add(this.ApplyAddingData, 4, 6);
-            this.TableLayoutPanel.Controls.Add(this.WrongCaloriesLabel, 4, 2);
+            this.TableLayoutPanel.Controls.Add(this.WrongCaloriesLabel, 4, 3);
             this.TableLayoutPanel.Controls.Add(this.BmiCommentLabel, 0, 6);
             this.TableLayoutPanel.Controls.Add(this.BmiLabel, 0, 5);
             this.TableLayoutPanel.Controls.Add(this.CurrentBmiLabel, 1, 5);
@@ -359,7 +359,7 @@
             this.TableLayoutPanel.Controls.Add(this.CurrentWeightTextBox, 3, 2);
             this.TableLayoutPanel.Controls.Add(this.CaloriesLabel, 2, 3);
             this.TableLayoutPanel.Controls.Add(this.WeightLabel, 2, 2);
-            this.TableLayoutPanel.Controls.Add(this.WrongWeightLabel, 4, 3);
+            this.TableLayoutPanel.Controls.Add(this.WrongWeightLabel, 4, 2);
             this.TableLayoutPanel.Controls.Add(this.MeasurementDateLabel, 3, 1);
             this.TableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.TableLayoutPanel.Location = new System.Drawing.Point(0, 0);
@@ -370,7 +370,7 @@
             this.TableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 34.83871F));
             this.TableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 65.16129F));
             this.TableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 79F));
-            this.TableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 29F));
+            this.TableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
             this.TableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 94F));
             this.TableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 49F));
             this.TableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 31F));
@@ -474,14 +474,14 @@
             this.dateTimePicker.Name = "dateTimePicker";
             this.dateTimePicker.Size = new System.Drawing.Size(189, 23);
             this.dateTimePicker.TabIndex = 17;
-            this.dateTimePicker.Value = new System.DateTime(2021, 10, 20, 0, 0, 0, 0);
+            this.dateTimePicker.Value = System.DateTime.Now.Date;
             this.dateTimePicker.ValueChanged += new System.EventHandler(this.dateTimePicker_ValueChanged);
             // 
             // CurrentCaloriesTextBox
             // 
             this.CurrentCaloriesTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.CurrentCaloriesTextBox.Location = new System.Drawing.Point(455, 218);
-            this.CurrentCaloriesTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.CurrentCaloriesTextBox.Margin = new System.Windows.Forms.Padding(3, 15, 3, 2);
             this.CurrentCaloriesTextBox.Name = "CurrentCaloriesTextBox";
             this.CurrentCaloriesTextBox.Size = new System.Drawing.Size(189, 23);
             this.CurrentCaloriesTextBox.TabIndex = 12;

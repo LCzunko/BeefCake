@@ -58,14 +58,6 @@ namespace BeefCakeGUI
             this.ResumeLayout();
         }
 
-        private void CancelAddingData_Click(object sender, EventArgs e)
-        {
-            this.SuspendLayout();
-            LoadGraphPanelData();
-            SwitchPanel(graphPanel);
-            this.ResumeLayout();
-        }
-
         private void dateTimePicker_ValueChanged(object sender, EventArgs e)
         {
             currentDate = dateTimePicker.Value;
