@@ -112,10 +112,10 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="CartmanAlterEgoObese" type="System.Resources.ResXFileRef, System.Windows.Forms">
@@ -137,5 +137,74 @@
   <data name="Workforce-weight-gain-ad-actor" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Workforce-weight-gain-ad-actor.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
 
+  </data>
+  <data name="EditDocument_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\EditDocument_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="EditManifest_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\EditManifest_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SignIn_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SignIn_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Tip1" xml:space="preserve">
+    <value>Watch your portion sizes.</value>
+  </data>
+  <data name="Tip10" xml:space="preserve">
+    <value>Plan your meals.</value>
+  </data>
+  <data name="Tip11" xml:space="preserve">
+    <value>Keep a positive attitude.</value>
+  </data>
+  <data name="Tip12" xml:space="preserve">
+    <value>Think for the long term.</value>
+  </data>
+  <data name="Tip13" xml:space="preserve">
+    <value>Make gradual changes.</value>
+  </data>
+  <data name="Tip14" xml:space="preserve">
+    <value>Eat slowly.</value>
+  </data>
+  <data name="Tip15" xml:space="preserve">
+    <value>Be more active.</value>
+  </data>
+  <data name="Tip16" xml:space="preserve">
+    <value>Sit less and move more.</value>
+  </data>
+  <data name="Tip17" xml:space="preserve">
+    <value>Look for healthy recipes.</value>
+  </data>
+  <data name="Tip18" xml:space="preserve">
+    <value>Manage your hunger.</value>
+  </data>
+  <data name="Tip19" xml:space="preserve">
+    <value>Close the kitchen at night.</value>
+  </data>
+  <data name="Tip2" xml:space="preserve">
+    <value>Track what you eat.</value>
+  </data>
+  <data name="Tip20" xml:space="preserve">
+    <value>Control your environments.</value>
+  </data>
+  <data name="Tip3" xml:space="preserve">
+    <value>Exercise daily.</value>
+  </data>
+  <data name="Tip4" xml:space="preserve">
+    <value>Make a goal and stick to it.</value>
+  </data>
+  <data name="Tip5" xml:space="preserve">
+    <value>Get more sleep.</value>
+  </data>
+  <data name="Tip6" xml:space="preserve">
+    <value>Drink more water.</value>
+  </data>
+  <data name="Tip7" xml:space="preserve">
+    <value>Fill up on fiber.</value>
+  </data>
+  <data name="Tip8" xml:space="preserve">
+    <value>Ditch added sugar.</value>
+  </data>
+  <data name="Tip9" xml:space="preserve">
+    <value>Find workouts you enjoy.</value>
   </data>
 </root>
