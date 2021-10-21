@@ -1,4 +1,5 @@
-﻿using System.Data;
+﻿using System;
+using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -10,6 +11,7 @@ namespace BeefCakeGUI
     public partial class MainForm : Form
     {
         private Chart dateWeightChart;
+        private Random random;
 
         private void graphToMeasurementButton_Click(object sender, System.EventArgs e)
         {
@@ -74,7 +76,7 @@ namespace BeefCakeGUI
             }
 
             menuText.Append("BEEFCAKE tip:\r\n");
-            string randomTipName = "Tip" + new System.Random().Next(1, 21);
+            string randomTipName = "Tip" + random.Next(1, 21);
             menuText.Append((string)Properties.Resources.ResourceManager.GetObject(randomTipName, Properties.Resources.Culture));
 
             return menuText.ToString();

@@ -1,4 +1,5 @@
-﻿using System.Windows.Forms;
+﻿using System;
+using System.Windows.Forms;
 using BeefCakeData.DAL.DAOInterface;
 using BeefCakeData.Model;
 using BeefCakeLogic;
@@ -21,15 +22,13 @@ namespace BeefCakeGUI
             this.measurementDao = measurementDao;
             this.inputValidator = inputValidator;
             this.measurementController = measurementController;
+            this.random = new Random();
 
             InitializeComponent();
 
             this.SuspendLayout();
             InitializeGraph();
             LoadLoginPanelData();
-            // TODO remove loads? LoadGraphPanelData();
-            // LoadMeasurementPanelData();
-            // LoadUserPanelData();
             InitializePanels();
             this.ResumeLayout();
         }
