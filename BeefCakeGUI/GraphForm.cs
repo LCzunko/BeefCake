@@ -54,7 +54,7 @@ namespace BeefCakeGUI
 
             if (latestBmi != 0.0M)
             {
-                menuText.Append($"Your latest BMI is {latestBmi:N2}.\r\n\r\n");
+                menuText.Append($"Your latest BMI is {latestBmi:N1}.\r\n\r\n");
                 switch (latestBmi)
                 {
                     case < 18.5M:
