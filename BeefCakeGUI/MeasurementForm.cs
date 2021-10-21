@@ -17,6 +17,7 @@ namespace BeefCakeGUI
             WrongWeightLabel.Text = string.Empty;
             MeasurementDateLabel.Text = SetCurrentDate();
             ApplyAddingData.Enabled = false;
+            dateTimePicker.Value = DateTime.Today;
             currentDate = dateTimePicker.Value;
             currentMeasurement = measurementController.GetUserMeasurementForDate(activeUser, currentDate);
             DisplayCurrentMeasurement(currentMeasurement);
