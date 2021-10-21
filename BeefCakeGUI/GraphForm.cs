@@ -21,6 +21,7 @@ namespace BeefCakeGUI
 
         private void graphToUserButton_Click(object sender, System.EventArgs e)
         {
+            isUserPanelInEditMode = true;
             this.SuspendLayout();
             LoadUserPanelData();
             SwitchPanel(userPanel);
