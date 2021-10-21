@@ -1,5 +1,6 @@
 ﻿using BeefCakeData.DAL;
 using BeefCakeData.Model;
+using BeefCakeData.Utilities;
 using System;
 using System.Linq;
 using System.Windows.Forms;
@@ -11,21 +12,53 @@ namespace BeefCakeGUI
 
         private void LoadUserPanelData()
         {
-            radioButtonFemale.Select();
+            if (isUserPanelInEditMode)
+            {
+                textBoxName.Text = activeUser.Name;
+                switch (activeUser.Gender)
+                {
+                    case Gender.F:
+                        radioButtonFemale.Select();
+                        break;
+                    case Gender.M:
+                        radioButtonMale.Select();
+                        break;
+                    default:
+                        radioButtonFemale.Select();
+                        break;
+                }
+                dateTimePickerDateOfBirth.Value = activeUser.DateOfBirth;
+                textBoxHeight.Text = activeUser.Height.ToString();
+            }
+            else
+            {
+                textBoxName.Text = string.Empty;
+                radioButtonFemale.Select();
+                dateTimePickerDateOfBirth.Value = DateTime.Today;
+                textBoxHeight.Text = string.Empty;
+            }
         }
 
         private void buttonCancelCreatingUser_Click(object sender, EventArgs e)
         {
-            this.SuspendLayout();
-            LoadLoginPanelData();
-            SwitchPanel(loginPanel);
-            this.ResumeLayout();
+            if (isUserPanelInEditMode)
+            {
+                this.SuspendLayout();
+                LoadGraphPanelData();
+                SwitchPanel(graphPanel);
+                this.ResumeLayout();
+            }
+            else
+            {
+                this.SuspendLayout();
+                LoadLoginPanelData();
+                SwitchPanel(loginPanel);
+                this.ResumeLayout();
+            }
         }
 
         private void buttonApplyCreatingUser_Click(object sender, EventArgs e)
         {
-            string errorMessage;
-            
             if (CheckNameValidity() && CheckDateOfBirthValidity() && CheckHeightValidity())
             {
                 if (isUserPanelInEditMode)
@@ -36,11 +69,6 @@ namespace BeefCakeGUI
                     activeUser.Height = Decimal.Parse(textBoxHeight.Text);
 
                     userDao.Update(activeUser);
-
-                    this.SuspendLayout();
-                    LoadGraphPanelData();
-                    SwitchPanel(graphPanel);
-                    this.ResumeLayout();
                 }
                 else
                 {
@@ -53,12 +81,12 @@ namespace BeefCakeGUI
 
                     userDao.Add(newUser);
                     activeUser = userDao.ReadAll().First(x => x.Name == newUser.Name);
-
-                    this.SuspendLayout();
-                    LoadLoginPanelData();
-                    SwitchPanel(loginPanel);
-                    this.ResumeLayout();
                 }
+
+                this.SuspendLayout();
+                LoadGraphPanelData();
+                SwitchPanel(graphPanel);
+                this.ResumeLayout();
             }
         }
 
