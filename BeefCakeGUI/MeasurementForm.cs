@@ -19,7 +19,7 @@ namespace BeefCakeGUI
             ApplyAddingData.Enabled = false;
             currentDate = dateTimePicker.Value;
             currentMeasurement = measurementController.GetUserMeasurementForDate(activeUser, currentDate);
-            DisplayCurrentMeasurement();
+            DisplayCurrentMeasurement(currentMeasurement);
         }
 
         private void ApplyAddingData_Click(object sender, EventArgs e)
@@ -63,7 +63,7 @@ namespace BeefCakeGUI
             currentDate = dateTimePicker.Value;
             var measurement = measurementController.GetUserMeasurementForDate(activeUser, currentDate);
             currentMeasurement = measurement;
-            DisplayCurrentMeasurement();
+            DisplayCurrentMeasurement(currentMeasurement);
         }
 
         private void CurrentWeightTextBox_TextChanged(object sender, EventArgs e)
@@ -99,16 +99,17 @@ namespace BeefCakeGUI
             return "Measurements for " + currentDate.ToString("d");
         }
 
-        private void DisplayCurrentMeasurement()
+        private void DisplayCurrentMeasurement(Measurement measurement)
         {
             ClearWrongDataLabels();
             MeasurementDateLabel.Text = SetCurrentDate();
-            if (currentMeasurement != null)
+            if (measurement != null)
             {
                 DisplayFilledMeasurement(currentMeasurement);
             }
             else
             {
+                ClearInputBoxes();
                 DisplayEmptyMeasurement();
             }
         }
@@ -174,8 +175,8 @@ namespace BeefCakeGUI
 
         private void ClearInputBoxes()
         {
-            CurrentCaloriesTextBox.Text = null;
-            CurrentWeightTextBox.Text = null;
+            CurrentCaloriesTextBox.Text = string.Empty;
+            CurrentWeightTextBox.Text = string.Empty;
         }
 
         private void UpdateMeasurement(decimal userWeight, int userCalories)
@@ -188,7 +189,7 @@ namespace BeefCakeGUI
         private void AddNewMeasurement(decimal userWeight, int userCalories)
         {
             var bmi = Math.Round(MeasurementController.CalculateBmi(activeUser.Height, userWeight), 1);
-            var measurement = MeasurementBuilder.BuildMeasurement(currentDate, userWeight, userCalories, bmi, activeUser.Id);
+            var measurement = MeasurementBuilder.BuildMeasurement(currentDate.Date, userWeight, userCalories, bmi, activeUser.Id);
             measurementController.AddMeasurement(measurement);
             currentMeasurement = measurement;
         }
