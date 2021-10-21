@@ -61,6 +61,24 @@ namespace BeefCakeLogic {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Given calorie count is not recognized as a number.
+        /// </summary>
+        internal static string msgCaloriesIsNotANumber {
+            get {
+                return ResourceManager.GetString("msgCaloriesIsNotANumber", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Given calorie count is outside valid range ( {0}kcal .. {1}kcal ).
+        /// </summary>
+        internal static string msgCaloriesOutsideValidRange {
+            get {
+                return ResourceManager.GetString("msgCaloriesOutsideValidRange", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Birth date has to be in the past.
         /// </summary>
         internal static string msgDateOfBirthNotInThePast {
@@ -70,11 +88,56 @@ namespace BeefCakeLogic {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Given height is outside valid height range ( {0}cm .. {1}cm ).
+        /// </summary>
+        internal static string msgHeightOutsideValidRange {
+            get {
+                return ResourceManager.GetString("msgHeightOutsideValidRange", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Given height is not recognized as a number.
+        /// </summary>
+        internal static string msgHightIsNotANumber {
+            get {
+                return ResourceManager.GetString("msgHightIsNotANumber", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to User name can not be empty.
+        /// </summary>
+        internal static string msgUserNameEmpty {
+            get {
+                return ResourceManager.GetString("msgUserNameEmpty", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to This user name is already taken.
         /// </summary>
         internal static string msgUserNameTaken {
             get {
                 return ResourceManager.GetString("msgUserNameTaken", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Given weight is not recognized as a number.
+        /// </summary>
+        internal static string msgWeightIsNotANumber {
+            get {
+                return ResourceManager.GetString("msgWeightIsNotANumber", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Given weight is outside valid weight range ( {0}kg .. {1}kg ).
+        /// </summary>
+        internal static string msgWeightOutsideValidRange {
+            get {
+                return ResourceManager.GetString("msgWeightOutsideValidRange", resourceCulture);
             }
         }
     }

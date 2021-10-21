@@ -93,9 +93,39 @@ namespace BeefCakeGUI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap cartmanPointing {
+            get {
+                object obj = ResourceManager.GetObject("cartmanPointing", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Checkmark_16x {
             get {
                 object obj = ResourceManager.GetObject("Checkmark_16x", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Mysterion {
+            get {
+                object obj = ResourceManager.GetObject("Mysterion", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Workforce_weight_gain_ad_actor {
+            get {
+                object obj = ResourceManager.GetObject("Workforce-weight-gain-ad-actor", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
