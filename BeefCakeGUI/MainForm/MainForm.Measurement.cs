@@ -135,12 +135,12 @@ namespace BeefCakeGUI
 
         private void DisplayFeedbackAccordingToBmi(decimal bmi)
         {
-            if (bmi <= 22 && bmi > 0)
+            if (bmi <= 20 && bmi > 0)
             {
                 MeasurementPicture.Image = Properties.Resources.Workforce_weight_gain_ad_actor;
                 BmiCommentLabel.Text = "Nice! Keep it lean!";
             }
-            else if (bmi <= 25 && bmi > 22)
+            else if (bmi <= 25 && bmi > 20)
             {
                 MeasurementPicture.Image = Properties.Resources.Cartman_Beefcake;
                 BmiCommentLabel.Text = "Keep up the good work!";
