@@ -47,7 +47,7 @@ namespace BeefCakeLogic
 
         public bool IsUserNameNotEmpty(string input, out string message)
         {
-            bool isNotEmpty = input.Length == 0;
+            bool isNotEmpty = input.Length != 0;
             message = isNotEmpty ? string.Empty : MessageResource.msgUserNameEmpty;
             return isNotEmpty;
         }
