@@ -468,7 +468,7 @@
             // 
             this.dateTimePicker.Location = new System.Drawing.Point(455, 32);
             this.dateTimePicker.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.dateTimePicker.MaxDate = new System.DateTime(2021, 10, 20, 0, 0, 0, 0);
+            this.dateTimePicker.MaxDate = System.DateTime.Now.Date;
             this.dateTimePicker.MinDate = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
             this.dateTimePicker.Name = "dateTimePicker";
             this.dateTimePicker.Size = new System.Drawing.Size(189, 23);

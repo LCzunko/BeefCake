@@ -26,7 +26,7 @@ namespace BeefCakeGUI
         {
             int userCalories;
             decimal userWeight;
-            //this.SuspendLayout();
+
             if (CurrentCaloriesTextBox.Text == string.Empty)
             {
                 userCalories = 0;
@@ -48,9 +48,14 @@ namespace BeefCakeGUI
                 UpdateMeasurement(userWeight, userCalories);
                 MessageBox.Show("Successfully updated the data");
             }
-            ////TODO LoadGraphPanelData();
-            ////SwitchPanel(graphPanel);
-            //this.ResumeLayout();
+        }
+
+        private void CancelAddingData_Click(object sender, EventArgs e)
+        {
+            this.SuspendLayout();
+            LoadGraphPanelData();
+            SwitchPanel(graphPanel);
+            this.ResumeLayout();
         }
 
         private void dateTimePicker_ValueChanged(object sender, EventArgs e)
