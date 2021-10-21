@@ -4,31 +4,79 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
-using BeefCakeData.DAL.DAOInterface;
-using BeefCakeData.Model;
 
 namespace BeefCakeGUI
 {
-    public partial class GraphForm : Form
+    public partial class MainForm : Form
     {
         private Chart dateWeightChart;
-        private User activeUser;
-        private IMeasurementDao measurementDao;
 
-        public GraphForm(IMeasurementDao measurementDao)
+        private void graphToMeasurementButton_Click(object sender, System.EventArgs e)
         {
-            InitializeComponent();
-            this.measurementDao = measurementDao;
-
-            // TODO temp - delete this in favor of depenedency injection
-            var temp = new BeefCakeData.DAL.DAOImpl.UserDao();
-            activeUser = temp.ReadAll().First();
-
             this.SuspendLayout();
-            InitializeGraph();
-
-            LoadGraphPanelData();
+            LoadMeasurementPanelData();
+            SwitchPanel(measurementPanel);
             this.ResumeLayout();
+        }
+
+        private void graphToUserButton_Click(object sender, System.EventArgs e)
+        {
+            this.SuspendLayout();
+            LoadUserPanelData();
+            SwitchPanel(userPanel);
+            this.ResumeLayout();
+        }
+
+        private void graphToLoginButton_Click(object sender, System.EventArgs e)
+        {
+            this.SuspendLayout();
+            LoadLoginPanelData();
+            SwitchPanel(loginPanel);
+            this.ResumeLayout();
+        }
+
+        private void LoadGraphPanelData()
+        {
+            var userMeasurements = measurementDao.ReadAll().Where(x => x.UserId == activeUser.Id).OrderBy(x => x.Date);
+            var latestBmi = userMeasurements.Select(x => x.Bmi).LastOrDefault();
+
+            this.graphMenuLabel.Text = GetGraphMenuText(latestBmi);
+            this.dateWeightChart.DataSource = userMeasurements;
+            this.dateWeightChart.Refresh();
+        }
+
+        private string GetGraphMenuText(decimal latestBmi)
+        {
+            var menuText = new StringBuilder();
+
+            menuText.Append($"Welcome, \r\n{activeUser.Name}!\r\n\r\n");
+
+            if (latestBmi != 0.0M)
+            {
+                menuText.Append($"Your latest BMI is {latestBmi:N2}.\r\n\r\n");
+                switch (latestBmi)
+                {
+                    case < 18.5M:
+                        menuText.Append("You are underweight.\r\n\r\nTry to bring it down!");
+                        break;
+                    case < 25M:
+                        menuText.Append("You are a healthy weight.\r\n\r\nKeep it up!");
+                        break;
+                    case < 30M:
+                        menuText.Append("You are overweight.\r\n\r\nTry to bring it down!");
+                        break;
+                    case >= 30M:
+                        menuText.Append("You are obese.\r\n\r\nWork on your lifestile and see a doctor!");
+                        break;
+                }
+                menuText.Append("\r\n\r\n");
+            }
+
+            menuText.Append("BEEFCAKE tip:\r\n");
+            string randomTipName = "Tip" + new System.Random().Next(1, 21);
+            menuText.Append((string)Properties.Resources.ResourceManager.GetObject(randomTipName, Properties.Resources.Culture));
+
+            return menuText.ToString();
         }
 
         private void InitializeGraph()
@@ -81,75 +129,6 @@ namespace BeefCakeGUI
             this.dateWeightChart.TabStop = false;
 
             this.graphTableLayoutPanel.Controls.Add(this.dateWeightChart, 1, 0);
-            //TODO graphPanel.Enabled = false;
-            //graphPanel.Visible = false;
-        }
-
-        private void LoadGraphPanelData()
-        {
-            var userMeasurements = measurementDao.ReadAll().Where(x => x.UserId == activeUser.Id).OrderBy(x => x.Date);
-            var latestBmi = userMeasurements.Select(x => x.Bmi).LastOrDefault();
-
-            this.graphMenuLabel.Text = GetGraphMenuText(latestBmi);
-            this.dateWeightChart.DataSource = userMeasurements;
-        }
-
-        private string GetGraphMenuText(decimal latestBmi)
-        {
-            var menuText = new StringBuilder();
-
-            menuText.Append($"Welcome, \r\n{activeUser.Name}!\r\n\r\n");
-
-            if (latestBmi != 0.0M)
-            {
-                menuText.Append($"Your latest BMI is {latestBmi:N2}.\r\n\r\n");
-                switch (latestBmi)
-                {
-                    case < 18.5M:
-                        menuText.Append("You are underweight.\r\n\r\nTry to bring it down!");
-                        break;
-                    case < 25M:
-                        menuText.Append("You are a healthy weight.\r\n\r\nKeep it up!");
-                        break;
-                    case < 30M:
-                        menuText.Append("You are overweight.\r\n\r\nTry to bring it down!");
-                        break;
-                    case >= 30M:
-                        menuText.Append("You are obese.\r\n\r\nWork on your lifestile and see a doctor!");
-                        break;
-                }
-                menuText.Append("\r\n\r\n");
-            }
-
-            menuText.Append("BEEFCAKE tip:\r\n");
-            string randomTipName = "Tip" + new System.Random().Next(1, 21);
-            menuText.Append((string)Properties.Resources.ResourceManager.GetObject(randomTipName, Properties.Resources.Culture));
-
-            return menuText.ToString();
-        }
-
-        private void graphToMeasurementButton_Click(object sender, System.EventArgs e)
-        {
-            this.SuspendLayout();
-            //TODO LoadMeasurementPanelData();
-            //SwitchPanel(measurementPanel);
-            this.ResumeLayout();
-        }
-
-        private void graphToUserButton_Click(object sender, System.EventArgs e)
-        {
-            this.SuspendLayout();
-            //TODO LoadUserPanelData();
-            //SwitchPanel(userPanel);
-            this.ResumeLayout();
-        }
-
-        private void graphToLoginButton_Click(object sender, System.EventArgs e)
-        {
-            this.SuspendLayout();
-            //TODO LoadLoginPanelData();
-            //SwitchPanel(loginPanel);
-            this.ResumeLayout();
         }
     }
 }

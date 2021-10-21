@@ -13,24 +13,10 @@ namespace BeefCakeLogic
             _measurementDao = measurementDao;
         }
 
-        /// <summary>
-        /// Calculates given user's Body Mass Index
-        /// </summary>
-        /// <param name="activeUser">User to calculate BMI for</param>
-        /// <param name="measurement">Measurement to use</param>
-        /// <returns></returns>
-        public static decimal CalculateBmi(User activeUser, Measurement measurement)
+        public static decimal CalculateBmi(decimal height, decimal weight)
         {
-            if (activeUser == null)
-            {
-                throw new ArgumentNullException(nameof(activeUser));
-            }
-            if (measurement == null)
-            {
-                throw new ArgumentNullException(nameof(measurement));
-            }
-            decimal heightInMeters = activeUser.Height * 0.01M;
-            decimal bmi = measurement.Weight / (heightInMeters * heightInMeters);
+            decimal heightInMeters = height * 0.01M;
+            decimal bmi = weight / (heightInMeters * heightInMeters);
             return bmi;
         }
 

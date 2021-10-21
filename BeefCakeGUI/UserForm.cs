@@ -1,52 +1,24 @@
 ﻿using BeefCakeData.DAL;
-using BeefCakeData.DAL.DAOInterface;
 using BeefCakeData.Model;
-using BeefCakeLogic;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace BeefCakeGUI
 {
-    public partial class UserForm : Form
+    public partial class MainForm : Form
     {
-        private InputValidator inputValidator;
-        private User activeUser;
-        private Panel activePanel;
-        private IUserDao userDao;
-        public UserForm(IUserDao userDao, InputValidator givenInputValidator)
-        {
-            InitializeComponent();
-            this.userDao = userDao;
-            inputValidator = givenInputValidator;
-            LoadLoginPanelData();
-        }
 
-        private void LoadLoginPanelData()
+        private void LoadUserPanelData()
         {
             radioButtonFemale.Select();
-        }
-
-        private void SwitchPanel(Panel panelToSwitch)
-        {
-            activePanel.Enabled = false;
-            activePanel.Visible = false;
-            activePanel = panelToSwitch;
-            activePanel.Enabled = true;
-            activePanel.Visible = true;
         }
 
         private void buttonCancelCreatingUser_Click(object sender, EventArgs e)
         {
             this.SuspendLayout();
-            //TODO LoadUserPanelData();
-            //SwitchPanel(loginPanel);
+            LoadUserPanelData();
+            SwitchPanel(loginPanel);
             this.ResumeLayout();
         }
 
@@ -65,11 +37,11 @@ namespace BeefCakeGUI
                     );
 
                 userDao.Add(newUser);
-                activeUser = newUser;
+                activeUser = userDao.ReadAll().First(x => x.Name == newUser.Name);
 
                 this.SuspendLayout();
-                //TODO LoadUserPanelData();
-                //SwitchPanel(graphPanel);
+                LoadGraphPanelData();
+                SwitchPanel(graphPanel);
                 this.ResumeLayout();
             }
         }

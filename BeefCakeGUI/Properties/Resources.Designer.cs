@@ -113,26 +113,6 @@ namespace BeefCakeGUI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Mysterion {
-            get {
-                object obj = ResourceManager.GetObject("Mysterion", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Workforce_weight_gain_ad_actor {
-            get {
-                object obj = ResourceManager.GetObject("Workforce-weight-gain-ad-actor", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap EditDocument_16x {
             get {
                 object obj = ResourceManager.GetObject("EditDocument_16x", resourceCulture);
@@ -146,6 +126,16 @@ namespace BeefCakeGUI.Properties {
         internal static System.Drawing.Bitmap EditManifest_16x {
             get {
                 object obj = ResourceManager.GetObject("EditManifest_16x", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Mysterion {
+            get {
+                object obj = ResourceManager.GetObject("Mysterion", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -337,6 +327,16 @@ namespace BeefCakeGUI.Properties {
         internal static string Tip9 {
             get {
                 return ResourceManager.GetString("Tip9", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Workforce_weight_gain_ad_actor {
+            get {
+                object obj = ResourceManager.GetObject("Workforce-weight-gain-ad-actor", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
     }
