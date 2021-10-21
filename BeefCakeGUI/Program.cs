@@ -1,8 +1,6 @@
 using BeefCakeData.DAL.DAOImpl;
+using BeefCakeLogic;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace BeefCakeGUI
@@ -18,7 +16,9 @@ namespace BeefCakeGUI
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form2(new MeasurementDao(), new UserDao()));
+            var userDao = new UserDao();
+            var measurementDao = new MeasurementDao();
+            Application.Run(new MainForm(userDao, measurementDao, new InputValidator(userDao), new MeasurementController(measurementDao)));
         }
     }
 }

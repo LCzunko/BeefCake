@@ -1,6 +1,4 @@
 ﻿using BeefCakeData.DAL;
-using BeefCakeData.DAL.DAOImpl;
-using BeefCakeData.DAL.DAOInterface;
 using BeefCakeData.Model;
 using BeefCakeLogic;
 using System;
@@ -9,27 +7,10 @@ using System.Windows.Forms;
 
 namespace BeefCakeGUI
 {
-    public partial class Form2 : Form
+    public partial class MainForm : Form
     {
-        private User activeUser;
-        private Panel activePanel;
-        private IUserDao userDao;
-        private IMeasurementDao measurementDao;
-        private MeasurementController measurementController;
         private DateTime currentDate;
         private Measurement currentMeasurement;
-        private InputValidator inputValidator;
-
-        public Form2(IMeasurementDao measurementDao, IUserDao userDaoo)
-        {
-            InitializeComponent();
-            this.measurementDao = measurementDao;
-            this.userDao = userDaoo;
-            measurementController = new(measurementDao);
-            activeUser = userDao.ReadAll().FirstOrDefault(x => x.Name == "Sylwia");
-            inputValidator = new(userDao);
-            LoadMeasurementPanelData();
-        }
 
         private void LoadMeasurementPanelData()
         {
@@ -40,15 +21,6 @@ namespace BeefCakeGUI
             currentDate = dateTimePicker.Value;
             currentMeasurement = GetUserMeasurementForDate(activeUser, currentDate);
             DisplayCurrentMeasurement(currentMeasurement);
-        }
-
-        private void SwitchPanel(Panel panelToSwitch)
-        {
-            activePanel.Enabled = false;
-            activePanel.Visible = false;
-            activePanel = panelToSwitch;
-            activePanel.Enabled = true;
-            activePanel.Visible = true;
         }
 
         private string SetCurrentDate()
@@ -66,9 +38,10 @@ namespace BeefCakeGUI
             {
                 var userCalories = int.Parse(calories);
                 var userWeight = decimal.Parse(weight);
+                var userBmi = MeasurementController.CalculateBmi(activeUser.Height, userWeight);
                 if (currentMeasurement == null)
                 {
-                    var measurement = MeasurementBuilder.BuildMeasurement(currentDate, userWeight, userCalories, activeUser.Id);
+                    var measurement = MeasurementBuilder.BuildMeasurement(currentDate, userWeight, userCalories, userBmi, activeUser.Id);
                     measurementController.AddMeasurement(measurement);
                     MessageBox.Show("Successfully added new data");
                 }
@@ -83,8 +56,8 @@ namespace BeefCakeGUI
                 WrongWeightLabel.Text = null;
             }
             else ApplyAddingData.Enabled = false;
-            //TODO LoadGraphPanelData();
-            //SwitchPanel(graphPanel);
+            LoadGraphPanelData();
+            SwitchPanel(graphPanel);
             this.ResumeLayout();
         }
 
@@ -112,8 +85,8 @@ namespace BeefCakeGUI
         private void CancelAddingData_Click(object sender, EventArgs e)
         {
             this.SuspendLayout();
-            //TODO LoadGraphPanelData();
-            //SwitchPanel(graphPanel);
+            LoadGraphPanelData();
+            SwitchPanel(graphPanel);
             this.ResumeLayout();
         }
 
@@ -137,7 +110,7 @@ namespace BeefCakeGUI
             if (measurement == null) DisplayNoMeasurement();
             else
             {
-                CurrentBmiLabel.Text = MeasurementController.CalculateBmi(activeUser, measurement).ToString();
+                CurrentBmiLabel.Text = MeasurementController.CalculateBmi(activeUser.Height, measurement.Weight).ToString();
                 currentMeasurement = measurement;
                 CurrentCaloriesTextBox.Text = measurement.Calories.ToString();
                 CurrentWeightTextBox.Text = measurement.Weight.ToString();
