@@ -269,7 +269,7 @@ namespace BeefCakeGUI.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Control your environments..
+        ///   Looks up a localized string similar to Control your environment..
         /// </summary>
         internal static string Tip20 {
             get {

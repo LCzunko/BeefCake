@@ -130,9 +130,6 @@
   <data name="Add_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Add_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Mysterion" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Mysterion.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="Checkmark_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Checkmark_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -185,7 +182,7 @@
     <value>Track what you eat.</value>
   </data>
   <data name="Tip20" xml:space="preserve">
-    <value>Control your environments.</value>
+    <value>Control your environment.</value>
   </data>
   <data name="Tip3" xml:space="preserve">
     <value>Exercise daily.</value>
