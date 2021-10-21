@@ -39,16 +39,17 @@ namespace BeefCakeLogic
         /// <returns>True if given name is not taken</returns>
         public bool IsUserNameAvailable(string input, out string message)
         {
-            if (input.Length == 0)
-            {
-                message = MessageResource.msgUserNameEmpty;
-                return false;
-            }
-
             IList<User> allUsers = _userDao.ReadAll();
             bool isNameAvailable = !allUsers.Any(user => user.Name == input);
             message = isNameAvailable ? string.Empty : MessageResource.msgUserNameTaken;
             return isNameAvailable;
+        }
+
+        public bool IsUserNameNotEmpty(string input, out string message)
+        {
+            bool isNotEmpty = input.Length != 0;
+            message = isNotEmpty ? string.Empty : MessageResource.msgUserNameEmpty;
+            return isNotEmpty;
         }
 
         /// <summary>
@@ -96,7 +97,7 @@ namespace BeefCakeLogic
         /// <returns>True if given weight is a decimal within valid range</returns>
         public bool IsWeightValid(string input, out string message)
         {
-            if (!decimal.TryParse(input, out decimal parsedInput))
+            if (!decimal.TryParse(input, out decimal parsedInput) && input != string.Empty)
             {
                 message = MessageResource.msgWeightIsNotANumber;
                 return false;
@@ -120,7 +121,7 @@ namespace BeefCakeLogic
         /// <returns>True if given calorie count is within valid range</returns>
         public bool IsCaloriesValid(string input, out string message)
         {
-            if (!int.TryParse(input, out int parsedInput))
+            if (!int.TryParse(input, out int parsedInput) && input != string.Empty)
             {
                 message = MessageResource.msgCaloriesIsNotANumber;
                 return false;

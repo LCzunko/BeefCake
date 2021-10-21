@@ -51,7 +51,7 @@ namespace BeefCakeData.Migrations
                             Id = 1,
                             Bmi = 22.2m,
                             Calories = 3000,
-                            Date = new DateTime(2021, 10, 20, 10, 41, 16, 803, DateTimeKind.Local).AddTicks(386),
+                            Date = new DateTime(2021, 10, 21, 0, 0, 0, 0, DateTimeKind.Local),
                             UserId = 1,
                             Weight = 68.5m
                         },
@@ -60,7 +60,7 @@ namespace BeefCakeData.Migrations
                             Id = 2,
                             Bmi = 23.3m,
                             Calories = 3500,
-                            Date = new DateTime(2021, 10, 20, 10, 41, 16, 819, DateTimeKind.Local).AddTicks(17),
+                            Date = new DateTime(2021, 10, 21, 0, 0, 0, 0, DateTimeKind.Local),
                             UserId = 2,
                             Weight = 80m
                         },
@@ -69,7 +69,7 @@ namespace BeefCakeData.Migrations
                             Id = 3,
                             Bmi = 22.7m,
                             Calories = 2000,
-                            Date = new DateTime(2021, 10, 20, 10, 41, 16, 819, DateTimeKind.Local).AddTicks(89),
+                            Date = new DateTime(2021, 10, 21, 0, 0, 0, 0, DateTimeKind.Local),
                             UserId = 3,
                             Weight = 78m
                         },
@@ -78,7 +78,7 @@ namespace BeefCakeData.Migrations
                             Id = 4,
                             Bmi = 18.6m,
                             Calories = 1900,
-                            Date = new DateTime(2021, 10, 20, 10, 41, 16, 819, DateTimeKind.Local).AddTicks(105),
+                            Date = new DateTime(2021, 10, 21, 0, 0, 0, 0, DateTimeKind.Local),
                             UserId = 4,
                             Weight = 54.0m
                         });
