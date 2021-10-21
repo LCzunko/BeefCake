@@ -50,7 +50,7 @@ namespace BeefCakeData.DAL
                 Id = 1,
                 UserId = 1,
                 Calories = 3000,
-                Date = DateTime.Now,
+                Date = DateTime.Now.Date,
                 Weight = 68.5m,
                 Bmi = 22.2m
             });
@@ -59,7 +59,7 @@ namespace BeefCakeData.DAL
                 Id = 2,
                 UserId = 2,
                 Calories = 3500,
-                Date = DateTime.Now,
+                Date = DateTime.Now.Date,
                 Weight = 80,
                 Bmi = 23.3m
             });
@@ -68,7 +68,7 @@ namespace BeefCakeData.DAL
                 Id = 3,
                 UserId = 3,
                 Calories = 2000,
-                Date = DateTime.Now,
+                Date = DateTime.Now.Date,
                 Weight = 78,
                 Bmi = 22.7m
             });
@@ -77,7 +77,7 @@ namespace BeefCakeData.DAL
                 Id = 4,
                 UserId = 4,
                 Calories = 1900,
-                Date = DateTime.Now,
+                Date = DateTime.Now.Date,
                 Weight = 54.0m,
                 Bmi = 18.6m
             });
