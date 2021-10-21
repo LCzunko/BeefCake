@@ -1,4 +1,5 @@
-﻿using System.Data;
+﻿using System;
+using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -10,6 +11,7 @@ namespace BeefCakeGUI
     public partial class MainForm : Form
     {
         private Chart dateWeightChart;
+        private Random random;
 
         private void graphToMeasurementButton_Click(object sender, System.EventArgs e)
         {
@@ -54,7 +56,7 @@ namespace BeefCakeGUI
 
             if (latestBmi != 0.0M)
             {
-                menuText.Append($"Your latest BMI is {latestBmi:N2}.\r\n\r\n");
+                menuText.Append($"Your latest BMI is {latestBmi:N1}.\r\n\r\n");
                 switch (latestBmi)
                 {
                     case < 18.5M:
@@ -67,14 +69,14 @@ namespace BeefCakeGUI
                         menuText.Append("You are overweight.\r\n\r\nTry to bring it down!");
                         break;
                     case >= 30M:
-                        menuText.Append("You are obese.\r\n\r\nWork on your lifestile and see a doctor!");
+                        menuText.Append("You are obese.\r\n\r\nWork on your lifestyle and see a doctor!");
                         break;
                 }
                 menuText.Append("\r\n\r\n");
             }
 
             menuText.Append("BEEFCAKE tip:\r\n");
-            string randomTipName = "Tip" + new System.Random().Next(1, 21);
+            string randomTipName = "Tip" + random.Next(1, 21);
             menuText.Append((string)Properties.Resources.ResourceManager.GetObject(randomTipName, Properties.Resources.Culture));
 
             return menuText.ToString();

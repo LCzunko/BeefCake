@@ -172,6 +172,7 @@ namespace BeefCakeGUI
         {
             currentMeasurement.Weight = userWeight;
             currentMeasurement.Calories = userCalories;
+            currentMeasurement.Bmi = Math.Round(MeasurementController.CalculateBmi(activeUser.Height, userWeight), 1);
             measurementController.EditMeasurement(currentMeasurement);
         }
 
