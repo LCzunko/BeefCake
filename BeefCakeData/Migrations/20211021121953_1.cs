@@ -45,10 +45,10 @@ namespace BeefCakeData.Migrations
                 columns: new[] { "Id", "Bmi", "Calories", "Date", "UserId", "Weight" },
                 values: new object[,]
                 {
-                    { 1, 22.2m, 3000, new DateTime(2021, 10, 20, 10, 41, 16, 803, DateTimeKind.Local).AddTicks(386), 1, 68.5m },
-                    { 2, 23.3m, 3500, new DateTime(2021, 10, 20, 10, 41, 16, 819, DateTimeKind.Local).AddTicks(17), 2, 80m },
-                    { 3, 22.7m, 2000, new DateTime(2021, 10, 20, 10, 41, 16, 819, DateTimeKind.Local).AddTicks(89), 3, 78m },
-                    { 4, 18.6m, 1900, new DateTime(2021, 10, 20, 10, 41, 16, 819, DateTimeKind.Local).AddTicks(105), 4, 54.0m }
+                    { 1, 22.2m, 3000, new DateTime(2021, 10, 21, 0, 0, 0, 0, DateTimeKind.Local), 1, 68.5m },
+                    { 2, 23.3m, 3500, new DateTime(2021, 10, 21, 0, 0, 0, 0, DateTimeKind.Local), 2, 80m },
+                    { 3, 22.7m, 2000, new DateTime(2021, 10, 21, 0, 0, 0, 0, DateTimeKind.Local), 3, 78m },
+                    { 4, 18.6m, 1900, new DateTime(2021, 10, 21, 0, 0, 0, 0, DateTimeKind.Local), 4, 54.0m }
                 });
 
             migrationBuilder.InsertData(
