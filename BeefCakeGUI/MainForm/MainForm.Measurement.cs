@@ -11,6 +11,7 @@ namespace BeefCakeGUI
     {
         private DateTime currentDate;
         private Measurement currentMeasurement;
+        private bool soundPlayed;
 
         private void LoadMeasurementPanelData()
         {
@@ -22,6 +23,7 @@ namespace BeefCakeGUI
             currentDate = dateTimePicker.Value;
             currentMeasurement = measurementController.GetUserMeasurementForDate(activeUser, currentDate);
             DisplayCurrentMeasurement(currentMeasurement);
+            soundPlayed = false;
         }
 
         private void ApplyAddingData_Click(object sender, EventArgs e)
@@ -150,8 +152,12 @@ namespace BeefCakeGUI
             {
                 MeasurementPicture.Image = Properties.Resources.CartmanAlterEgoObese;
                 BmiCommentLabel.Text = "BEEFCAKE!";
-                SoundPlayer splayer = new SoundPlayer(@"C:\Users\QNVD84\Desktop\BeefCake\BeefCake\BeefCakeGUI\Documentation\beefcake.wav");
-                splayer.Play();
+                if (!soundPlayed)
+                {
+                    SoundPlayer splayer = new SoundPlayer(Properties.Resources.beefcake);
+                    splayer.Play();
+                    soundPlayed = true;
+                }
             }
             else
             {
