@@ -2,6 +2,7 @@
 using BeefCakeData.Model;
 using BeefCakeLogic;
 using System;
+using System.Media;
 using System.Windows.Forms;
 
 namespace BeefCakeGUI
@@ -149,6 +150,8 @@ namespace BeefCakeGUI
             {
                 MeasurementPicture.Image = Properties.Resources.CartmanAlterEgoObese;
                 BmiCommentLabel.Text = "BEEFCAKE!";
+                SoundPlayer splayer = new SoundPlayer(@"C:\Users\QNVD84\Desktop\BeefCake\BeefCake\BeefCakeGUI\Documentation\beefcake.wav");
+                splayer.Play();
             }
             else
             {
